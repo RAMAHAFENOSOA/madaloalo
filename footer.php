@@ -8,23 +8,23 @@
       <div class="col-lg-3 col-md-6 footer-links">
         <h4 style="color:#1e4356">Lien</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="index.php">Accueil</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="about.php">A propos</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="services.php">Services</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="achat.php">Achat</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="team.php">Membres</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Destinations</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact</a></li>
+          <li><a href="index.php">Accueil</a></li>
+          <li><a href="about.php">A propos</a></li>
+          <li><a href="services.php">Services</a></li>
+          <li><a href="achat.php">Achat</a></li>
+          <li><a href="team.php">Membres</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-md-6 footer-links">
         <h4 style="color:#1e4356">Services</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="reservation.php">Activités</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="reservation.php">Hôtel</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="achat.php">Achat</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="reservation.php">Réservation</a></li>
+          <li><a href="reservation.php">Activités</a></li>
+          <li><a href="reservation.php">Hôtel</a></li>
+          <li><a href="achat.php">Achat</a></li>
+          <li><a href="reservation.php">Réservation</a></li>
      
         </ul>
       </div>
@@ -54,9 +54,17 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="copyright-container">
+  <div class="sub-container-copyright">
+  <div>
+    <img src="assets/img/ico-orangemoney.jpg" class="paiements-logo" alt="">
+    <img src="assets/img/visa-logo-800x450.webp" class="paiements-logo" alt="">
+    <img src="assets/img/brandhistory_mc1996_100_2x.png" class="paiements-logo" alt="">
+  </div>
   <div class="copyright">
-    &copy; Copyright <strong><span>multiseven</span></strong>. 
+     Copyright &copy; 2023 <strong>Madaloalo.com | Madagascar</strong> 
+  </div>
+  <div></div>
   </div>
 </div>
 </footer><!-- End Footer -->
