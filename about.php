@@ -1,3 +1,46 @@
+<?php
+include 'database.php'; 
+$sql = "SELECT COUNT(*) AS count FROM provinces";
+$resultProvinces = $conn->query($sql);
+if ($resultProvinces->num_rows > 0) {
+    // Fetch the count
+    $rowProvinces = $resultProvinces->fetch_assoc();
+    $resultProvinces = $rowProvinces["count"];
+    echo "The count of records is: " . $resultProvinces;
+} else {
+    echo "No records found.";
+}
+$sql = "SELECT COUNT(*) AS count FROM hotel";
+$resultHotels = $conn->query($sql);
+if ($resultHotels->num_rows > 0) {
+    // Fetch the count
+    $rowHotels = $resultHotels->fetch_assoc();
+    $resultHotels = $rowHotels["count"];
+    echo "The count of records is: " . $resultHotels;
+} else {
+    echo "No records found.";
+}
+$sql = "SELECT COUNT(*) AS count FROM restaurant";
+$resultRestaurant = $conn->query($sql);
+if ($resultRestaurant->num_rows > 0) {
+    // Fetch the count
+    $rowRestaurants = $resultRestaurant->fetch_assoc();
+    $resultRestaurant = $rowRestaurants["count"];
+    echo "The count of records is: " . $resultRestaurant;
+} else {
+    echo "No records found.";
+}
+$sql = "SELECT COUNT(*) AS count FROM personne";
+$resultPersonne = $conn->query($sql);
+if ($resultPersonne->num_rows > 0) {
+    // Fetch the count
+    $rowPersonne = $resultPersonne->fetch_assoc();
+    $resultPersonne = $rowPersonne["count"];
+    echo "The count of records is: " . $resultPersonne;
+} else {
+    echo "No records found.";
+}
+?>
 <!DOCTYPE php>
 <php lang="en">
 
@@ -5,7 +48,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About - Moderna Bootstrap Template</title>
+  <title>About de madaloalo</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -39,10 +82,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>About Us</h2>
+          <h2>A propos </h2>
           <ol>
-            <li><a href="index.php">Home</a></li>
-            <li>About Us</li>
+            <li><a href="index.php">Accueil</a></li>
+            <li>A propos</li>
           </ol>
         </div>
 
@@ -50,28 +93,25 @@
     </section><!-- End About Us Section -->
 
     <!-- ======= About Section ======= -->
+    
     <section class="about" data-aos="fade-up">
       <div class="container">
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="assets/img/drone.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
+            <h3>A propos de MADALOALO.</h3>
+            <p class="fst-italic"> Voici quelques exemples de ce que Madaloalo peut vous offrir:</p>
             <ul>
-              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check2-circle"></i>Permet de vous guider dans votre quêtes</li>
+              <li><i class="bi bi-check2-circle"></i> Vous donnes des informations sur les agences et autres informations que vous pourriez avoir besoin</li>
+              <li><i class="bi bi-check2-circle"></i>Vous aides à choisir une place comme déstination. Cela pourra ne pas être fixe</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+            Pourquoi avez-vous besoin d'un guide pour voyager à Madagascar ?
+Bien qu'il ne soit pas nécessaire d'avoir un guide national à Madagascar, il est fortement recommandé parce que : L'anglais est rarement parlé dans le pays, et couramment Français n'est pas souvent parlé dans les zones rurales. Nos guides nationaux peuvent vous aider à communiquer avec les habitants, ainsi qu’avec les guides locaux, qui sont souvent tenus de visiter les attractions touristiques nationales Les guides peuvent aider les visiteurs à naviguer dans certaines régions du pays où le GPS ne fonctionne pas Divers sites touristiques nécessitent des guides de conduite pour l'accès en raison de l'état des routes Les guides peuvent gérer l'hébergement à l'hôtel et les options de restauration en fonction de vos souhaits et de votre budget Les guides peuvent aider les visiteurs en cas d'urgence, ou peuvent les aider à naviguer dans l'infrastructure de santé limitée dans le pays au besoin.
             </p>
           </div>
         </div>
@@ -86,132 +126,90 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Clients</p>
+            <span data-purecounter-start="0" data-purecounter-end="<?php  echo($resultProvinces)?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Provinces</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
+            <span data-purecounter-start="0" data-purecounter-end="<?php  echo($resultHotels)?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hotels</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
+            <span data-purecounter-start="0" data-purecounter-end="<?php  echo($resultRestaurant)?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Restaurants</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hard Workers</p>
+            <span data-purecounter-start="0" data-purecounter-end="<?php  echo($resultPersonne)?>" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Membres</p>
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Our Skills Section ======= -->
-    <section class="skills" data-aos="fade-up">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Skills</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="skills-content">
-
-          <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">php <i class="val">100%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">CSS <i class="val">90%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-            </div>
-          </div>
-
-          <div class="progress">
-            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-              <span class="skill">Photoshop <i class="val">55%</i></span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Our Skills Section -->
+    </section> <!-- End Facts Section -->
 
     <!-- ======= Tetstimonials Section ======= -->
     <section class="testimonials" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
-          <h2>Tetstimonials</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Agence de voyages</h2>
+          <p>Une liste de quelques agences de voyages qui collabore avec nous :</p>
         </div>
 
         <div class="testimonials-carousel swiper">
           <div class="swiper-wrapper">
             <div class="testimonial-item swiper-slide">
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
+              <img src="assets/img/madacartour.png" class="testimonial-img" alt="">
+              <h3>Madacartour</h3>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                Madacartour propose une variété de visites pré-planifiées autour de Madagascar. Adapter également les plans en fonction du temps et du budget du voyageur, et aussi soutenir les visiteurs qui planifient leurs propres excursions.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
 
             <div class="testimonial-item swiper-slide">
-              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
+              <img src="assets/img/aventour madagascar.png" class="testimonial-img" alt="">
+              <h3>Aventour Madagascar</h3>
+              
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                Aventour Madagascar est une agence de voyages, réceptif et tour opérateur. Elle est basée à Antananarivo et propose des séjours et des circuits à travers toute la Grande Île.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
 
             <div class="testimonial-item swiper-slide">
-              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
+              <img src="assets/img/lemuria tour.jpg" class="testimonial-img" alt="">
+              <h3>Lemuria tour</h3>
+              
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                Lemuria Tours est une Agence de voyage, Tour opérateur et Loueur de Voitures.
+                Pour mieux vous servir, notre agence malgache a conçu toute une gamme de prestations allant du transport, l'hébergement à la restauration vous permettant de voyager 
+                sereinement et profiter au maximum de votre séjour.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
 
             <div class="testimonial-item swiper-slide">
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
+              <img src="assets/img/Logo-ARICS.jpg" class="testimonial-img" alt="">
+              <h3>ARICS Tours</h3>
+             
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                ARICS TOURS Madagascar Travel Agency opère dans le volet de la billetterie pour toutes destinations internationale, nationales, régionales qui permet aux touristes de découvrir les sites touristiques émotionnels de notre Ile.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
 
             <div class="testimonial-item swiper-slide">
-              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
+              <img src="assets/img/Espace-Mada.webp" class="testimonial-img" alt="">
+              <h3>Espace Mada</h3>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                Espace Mada Tour opérateur à Madagascar organise des circuits touristiques pour vos vacances à Madagascar avec location de 4*4, circuits avec chauffeur Guide. Découvertes du fleuve Tsiribihina, des Tsingy du Bemaraha, des parcs et réserve.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
@@ -220,7 +218,7 @@
         </div>
 
       </div>
-    </section><!-- End Ttstimonials Section -->
+    </section><!-- End Ttstimonials Section */ -->
 
   </main><!-- End #main -->
   <?php include "footer.php" ?>

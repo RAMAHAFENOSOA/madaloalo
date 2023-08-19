@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -32,7 +32,9 @@
 <body>
     <?php include "header.php" ?>
     <div id="main">
-        
+          <form method="post" action="nouvelle_page.php">
+          <input type="submit" name="btnRegion" value="Afficher la page de la région">
+          </form>
     </div>
    
 
