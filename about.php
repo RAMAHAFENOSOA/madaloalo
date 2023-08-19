@@ -6,9 +6,7 @@ if ($resultProvinces->num_rows > 0) {
     // Fetch the count
     $rowProvinces = $resultProvinces->fetch_assoc();
     $resultProvinces = $rowProvinces["count"];
-    echo "The count of records is: " . $resultProvinces;
 } else {
-    echo "No records found.";
 }
 $sql = "SELECT COUNT(*) AS count FROM hotel";
 $resultHotels = $conn->query($sql);
@@ -16,9 +14,7 @@ if ($resultHotels->num_rows > 0) {
     // Fetch the count
     $rowHotels = $resultHotels->fetch_assoc();
     $resultHotels = $rowHotels["count"];
-    echo "The count of records is: " . $resultHotels;
 } else {
-    echo "No records found.";
 }
 $sql = "SELECT COUNT(*) AS count FROM restaurant";
 $resultRestaurant = $conn->query($sql);
@@ -26,9 +22,7 @@ if ($resultRestaurant->num_rows > 0) {
     // Fetch the count
     $rowRestaurants = $resultRestaurant->fetch_assoc();
     $resultRestaurant = $rowRestaurants["count"];
-    echo "The count of records is: " . $resultRestaurant;
 } else {
-    echo "No records found.";
 }
 $sql = "SELECT COUNT(*) AS count FROM personne";
 $resultPersonne = $conn->query($sql);
@@ -36,9 +30,7 @@ if ($resultPersonne->num_rows > 0) {
     // Fetch the count
     $rowPersonne = $resultPersonne->fetch_assoc();
     $resultPersonne = $rowPersonne["count"];
-    echo "The count of records is: " . $resultPersonne;
 } else {
-    echo "No records found.";
 }
 ?>
 <!DOCTYPE php>
@@ -53,8 +45,7 @@ if ($resultPersonne->num_rows > 0) {
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/madaloalo-high-resolution-color-logo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
