@@ -8,23 +8,23 @@
       <div class="col-lg-3 col-md-6 footer-links">
         <h4 style="color:#1e4356">Lien</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">A propos</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Achat</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Membres</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="index.php">Accueil</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="about.php">A propos</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="services.php">Services</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="achat.php">Achat</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="team.php">Membres</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Destinations</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact</a></li>
         </ul>
       </div>
 
       <div class="col-lg-3 col-md-6 footer-links">
         <h4 style="color:#1e4356">Services</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Activités</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Hôtel</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Achat</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Réservation</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="reservation.php">Activités</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="reservation.php">Hôtel</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="achat.php">Achat</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="reservation.php">Réservation</a></li>
      
         </ul>
       </div>

@@ -20,7 +20,6 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           <li><a href="about.php">A propos</a></li>
           <li><a href="services.php">Services</a></li>
           <li><a href="achat.php">Achat</a></li>
-          <li><a href="team.php">Membres</a></li>
           <li><a href="reservation.php">Réservation</a></li>
           <li class="dropdown"><a href="#"><span>Provinces</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
