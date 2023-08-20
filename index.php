@@ -169,9 +169,8 @@
               </div>
               <div class="col-md-6">
                 <div class="info-box">
-                  <i class="bx bx-envelope"></i>
+                 <a href="mailto:multisevenup@example.com"> <i class="bx bx-envelope"> </i></a>
                   <h3>Email </h3>
-                   <a href="mailto:multisevenup@example.com"><i class="bx bx-envelope"></i></a> 
                   <p>multisevenup@example.com</p>
                 </div>
               </div>

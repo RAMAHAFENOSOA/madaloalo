@@ -13,7 +13,6 @@
           <li><i class="bx bx-chevron-right"></i> <a href="services.php">Services</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="achat.php">Achat</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="team.php">Membres</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Destinations</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact</a></li>
         </ul>
       </div>
@@ -43,11 +42,11 @@
       <div class="col-lg-3 col-md-6 footer-info">
         <h3 style="color:#1e4356">A propos de Madaloalo</h3>
         <p>Madaloalo est le site qui permet de savoir la meilleure destination à Madagascar</p>
-        <div class="social-links mt-3">
-          <a href="https://www.twitter.com" class="twitter">    <i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com" class="facebook">   <i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com" class="instagram">  <i class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com" class="linkedin">   <i class="bx bxl-linkedin"></i></a>
+        <div class="social-links mt-3"> 
+          <a href="https://www.twitter.com"  target="blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.facebook.com" target="blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com" target="blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com" target="blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
