@@ -11,8 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/madaloalo-high-resolution-color-logo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -93,7 +92,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <div class="icon-box icon-box-green">
               <div class="icon"><i class="bi bi-cart3"></i></div>
-              <h4 class="title"><a href="achat.php"></a>Achat</h4> 
+              <h4 class="title"><a href="achat.php">Achat</a></h4> 
               <p class="description">Bénéficier d'une facilité et commodité de l'achat en ligne</p>
             </div>
     
@@ -119,7 +118,7 @@
         <div class="row">
           <div class="col-lg-6 video-box">
           <video width="600px" controls autoplay muted loop>
-            <source src="assets/video/Madagascar - Parc National Tsingy de Bemaraha  [4K].mp4" type="video/mp4">
+            <source src="" type="video/mp4">
           </video>
           </div>
 
@@ -168,9 +167,8 @@
               </div>
               <div class="col-md-6">
                 <div class="info-box">
-                  <i class="bx bx-envelope"></i>
+                 <a href="mailto:multisevenup@example.com"> <i class="bx bx-envelope"> </i></a>
                   <h3>Email </h3>
-                   <a href="mailto:multisevenup@example.com"><i class="bx bx-envelope"></i></a> 
                   <p>multisevenup@example.com</p>
                 </div>
               </div>
@@ -234,7 +232,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

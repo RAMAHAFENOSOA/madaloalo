@@ -10,8 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/madaloalo-high-resolution-color-logo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -59,9 +58,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
             <div class="icon-box icon-box-pink">
               <div class="icon"><i class="bi bi-bicycle"></i></div>
-
-              <h4 class="title"><a href="">Activités</a></h4>
-              
+              <h4 class="title"><a href="reservation.php">Activités</a></h4>   
               <p class="description">Rejoignez-nous pour une aventure épique <br>Explorez les magnifiques paysages côtiers entouré par la beauté naturelle</p>
             </div>
           </div>
@@ -69,7 +66,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bi bi-house"></i></div>
-              <h4 class="title"><a href="">Hôtels</a></h4>
+              <h4 class="title"><a href="reservation.php">Hôtels</a></h4>
               <p class="description"> Découvrez un séjour exceptionel dont nous vous invitons à vous ressourcer dans des diverses Hôtels à Madagascar </p>
             </div>
           </div>
@@ -77,7 +74,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box icon-box-green">
               <div class="icon"><i class="bi bi-cart3"></i></div>
-              <h4 class="title"><a href="">Achat</a></h4>
+              <h4 class="title"><a href="achat.php">Achat</a></h4>
               <p class="description">Bénéficier d'une facilité et commodité de l'achat en ligne</p>
             </div>
           </div>
@@ -85,7 +82,7 @@
                       <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box icon-box-blue">
               <div class="icon"><i class="bi bi-file-check"></i></div>
-              <h4 class="title"><a href="#Réservation.php">Reservation</a></h4>
+              <h4 class="title"><a href="reservation.php">Reservation</a></h4>
               <p class="description">Simplifiez votre voyage en réservant chez nous </p>
             </div>
           </div>

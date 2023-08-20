@@ -10,8 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/madaloalo-high-resolution-color-logo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -63,7 +62,7 @@
                 <img src="assets/img/team/Team-1.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100087287593351" target="_blank"><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
@@ -185,26 +184,6 @@
               <div class="member-info">
                 <h4>Sarobidy Nantenaina</h4>
                 <span>IMTIC</span>
-                <p>Etudiant en Informatique Multimédia Technologie de L'information et de la Communication et Intelligence Artificielle (à l'ISPM) </p> 
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/Fiderana.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Fiderana Ramahafenosoa</h4>
-                <span>IMTIC 3</span>
                 <p>Etudiant en Informatique Multimédia Technologie de L'information et de la Communication et Intelligence Artificielle (à l'ISPM) </p> 
               </div>
             </div>

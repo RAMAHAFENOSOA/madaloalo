@@ -14,11 +14,6 @@ if(isset($_POST['signup']))
         if (!$add_user) {
             echo "something went wrong ". mysqli_error($conn);
         }
-        else { 
-            echo "Connexion réussie! Bonjour, $user!";
-        echo "<script type='text/javascript'>alert('Inscription réussie! Bonjour, $user!')</script>";
-        echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
-        }
 }
 ?>
 <!DOCTYPE html>
@@ -102,6 +97,21 @@ if(isset($_POST['signup']))
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
+<?php include "popup-remerciement.php" ?>
+<?php 
+if(isset($_POST['signup'])) 
+{
+        if ($add_user) {
+            echo "
+            <script type='text/javascript'>
+            document.getElementById('popup-title').innerHTML = 'Bienvenue $user!';
+            document.querySelectorAll('.popup-overlay')[0].style.display = 'flex';
+            document.querySelectorAll('.popup')[0].style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Désactiver le défilement
+            </script>";
+        }
+}
+?>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

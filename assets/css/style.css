@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+a .deconnexion{
+  color: #cc4117!important;
+}
+
 a:hover {
   color: #45beff;
   text-decoration: none;
@@ -29,8 +33,8 @@ h6,
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: 15px;
-  z-index: 99999;
+  bottom: 6%;
+  z-index: 6;
   background: #77bde2;
   width: 40px;
   height: 40px;
@@ -60,9 +64,13 @@ h6,
 #header {
   height: 80px;
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 6;
   transition: all 0.5s;
   background: #1e4356;
+}
+
+#header .header-container {
+  padding: 0% 5% 0% 0!important;
 }
 
 #header.header-transparent {
@@ -72,6 +80,10 @@ h6,
 #header.header-scrolled {
   background: rgba(30, 67, 86, 0.8);
   height: 60px;
+}
+#header .logo {
+  left: 0%;
+  position: relative;
 }
 
 #header .logo h1 {
@@ -1074,7 +1086,7 @@ section {
   width: calc(100% + 60px);
   margin-left: -30px;
   overflow: hidden;
-  z-index: 9;
+  z-index: 1;
   border-radius: 0;
 }
 
@@ -1084,7 +1096,7 @@ section {
 }
 
 .service-details .card-body {
-  z-index: 10;
+  z-index: 1;
   background: #fff;
   border-top: 4px solid #fff;
   padding: 30px;
@@ -2120,7 +2132,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #178ca4;
-  padding: 0 0 30px 0;
+  padding: 0px;
   color: #fff;
   font-size: 14px;
 }
@@ -2177,7 +2189,7 @@ section {
   background: #178ca4;
   border-top: 1px solid #17455e;
   border-bottom: 1px solid #178ca4;
-  padding: 60px 0 30px 0;
+  padding: 20px 0 0 0;
 }
 
 #footer .footer-top .footer-info {
@@ -2248,7 +2260,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul li {
-  padding: 10px 0;
+  padding: 5px 0;
   display: flex;
   align-items: center;
 }
@@ -2278,7 +2290,23 @@ section {
 
 #footer .copyright {
   text-align: center;
-  padding-top: 30px;
+  padding: 20px 0 20px 0;
+}
+
+#footer .copyright-container .sub-container-copyright {
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.paiements-logo {
+  max-width: 60px;
+}
+
+#footer  .copyright-container .sub-container-copyright div {
+  flex: 1;
+  text-align: center;
 }
 
 #footer .credits {
