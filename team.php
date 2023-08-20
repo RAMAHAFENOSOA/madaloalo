@@ -189,26 +189,6 @@
             </div>
           </div>
 
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <div class="member-img">
-                <img src="assets/img/team/Fiderana.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Fiderana Ramahafenosoa</h4>
-                <span>IMTIC 3</span>
-                <p>Etudiant en Informatique Multimédia Technologie de L'information et de la Communication et Intelligence Artificielle (à l'ISPM) </p> 
-              </div>
-            </div>
-          </div>
-
         </div>
 
       </div>

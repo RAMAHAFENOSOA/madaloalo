@@ -99,12 +99,12 @@ if(isset($_POST['signup']))
     <script src="js/main.js"></script>
 <?php include "popup-remerciement.php" ?>
 <?php 
-include "database.php";
 if(isset($_POST['signup'])) 
 {
         if ($add_user) {
             echo "
             <script type='text/javascript'>
+            document.getElementById('popup-title').innerHTML = 'Bienvenue $user!';
             document.querySelectorAll('.popup-overlay')[0].style.display = 'flex';
             document.querySelectorAll('.popup')[0].style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Désactiver le défilement

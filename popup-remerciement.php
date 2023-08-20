@@ -58,7 +58,9 @@
 <div class="popup-overlay">
     <div class="popup">
         <img src="assets/img/thank-you.PNG" alt="Popup Image" class="popup-image">
-          <p class="popup-content">Nous tenons à exprimer notre sincère gratitude pour avoir choisi Madaloalo comme votre guide pour découvrir les meilleures destinations à Madagascar. Votre soutien est ce qui nous motive à continuer à fournir des informations de qualité et à vous aider à vivre des expériences extraordinaires dans ce magnifique pays. Merci d'être un membre précieux de la communauté Madaloalo. Votre aventure passionnante ne fait que commencer !</p>
+
+        <h3 id="popup-title"></h3>
+        <p class="popup-content">Nous tenons à exprimer notre sincère gratitude pour avoir choisi Madaloalo comme votre guide pour découvrir les meilleures destinations à Madagascar. Votre soutien est ce qui nous motive à continuer à fournir des informations de qualité et à vous aider à vivre des expériences extraordinaires dans ce magnifique pays. Merci d'être un membre précieux de la communauté Madaloalo. Votre aventure passionnante ne fait que commencer !</p>
         <button class="close-popup form-submit" style="background-color: #38b0e0;">Commencer le voyage !</button>
         <div class="social-links mt-3">
           <a href="https://www.twitter.com" class="twitter">    <i class="bx bxl-twitter"></i></a>
