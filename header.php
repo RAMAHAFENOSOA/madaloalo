@@ -50,9 +50,12 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           <li><a href="signup.php">S'inscrire</a></li>
           <li><a href="signin.php">Se connecter</a></li>
           <li><a href="https://ispm-edu.com/"><img src="assets/img/logo_ispm.png" style="height:70px;width:70px;" alt="ispm_logo"></a></li>
+          <li><a href="#rech"><img src="assets/img/search.png" alt=""></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
+        
+    </div>                   
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->

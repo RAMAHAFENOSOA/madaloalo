@@ -33,10 +33,10 @@
 
 <body>
 <?php include "header.php" ?>
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
@@ -60,7 +60,6 @@
       <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
       </a>
-
     </div>
   </section><!-- End Hero -->
 
