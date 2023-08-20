@@ -11,8 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/madaloalo-high-resolution-color-logo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -33,6 +32,7 @@
 
 <body>
 <?php include "header.php" ?>
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
@@ -120,7 +120,7 @@
         <div class="row">
           <div class="col-lg-6 video-box">
           <video width="600px" controls autoplay muted loop>
-            <source src="assets/video/Madagascar - Parc National Tsingy de Bemaraha  [4K].mp4" type="video/mp4">
+            <source src="" type="video/mp4">
           </video>
           </div>
 
@@ -234,7 +234,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
