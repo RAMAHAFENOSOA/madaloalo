@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 21 juil. 2023 à 16:19
+-- Généré le : mar. 22 août 2023 à 01:05
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -136,6 +136,21 @@ INSERT INTO `hotel` (`id_hotel`, `nom_hotel`, `adress_lieu`, `description_hotel`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `panier`
+--
+
+CREATE TABLE `panier` (
+  `id_panier` int(11) NOT NULL,
+  `nom_personne` varchar(25) NOT NULL,
+  `nom_article` varchar(50) NOT NULL,
+  `img_article` varchar(100) NOT NULL,
+  `prix_totale` int(11) NOT NULL,
+  `nbr_achete` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `personne`
 --
 
@@ -152,7 +167,41 @@ CREATE TABLE `personne` (
 
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `email`, `mot_de_passe`) VALUES
 (1, 'Corinah', 'ctarantsoa@yahoo.fr', '1234'),
-(2, 'RAMAHAFENOSOA Fidera', 'fiderananyavoramahaf', '140301');
+(2, 'RAMAHAFENOSOA Fidera', 'fiderananyavoramahaf', '140301'),
+(3, 'Rico Antonio', 'randrianarivelotoni@', '1234'),
+(4, 'Alain ', 'Madaloalo@gmail.com', '1234'),
+(5, 'Corinah', 'rtarantsoa@gmail.com', '12345'),
+(6, 'RAZA', 'test@gmail.com', '123'),
+(7, 'Corinah', 'rtarantsoa@gmail.com', '1234'),
+(8, 'Corinah', 'rtarantsoa@gmail.com', '1234'),
+(9, 'Fiderana', 'fy@gmail.com', '123456'),
+(10, 'sd', 'ssssss@test.com', 'sd'),
+(11, 'fi', 'fi@gmail.com', '1234'),
+(12, 'yves', 'ideal@gmail.com', 'yves'),
+(13, 'manoo', 'manoo@gmail.com', 'manoo'),
+(14, 'tara', 'tara@gmail.com', '1234'),
+(15, 'janye', 'janye@gmail.com', 'janye'),
+(16, 'tara', 'tara@gmail.com', '1234'),
+(17, 'fitianah', 'nlaurca@gmail.com', 'loulou'),
+(18, 'sam', 'samrkt@gmail.com', 'tzy'),
+(19, 'sam', 'samrkt@gmail.com', 'tzy'),
+(20, 'sam', 'samrkt@gmail.com', 'tay'),
+(21, 'finn', 'fyarisoaa@gmail.com', 'chicasbellas'),
+(22, 'fitia', 'fitia@gmail.com', 'ppp'),
+(23, 'Corinah', 'ctarantsoa@yahoo.fr', '1234'),
+(24, 'jorres', 'jorres@gmail.com', 'ooo'),
+(25, 'Corinah', 'test@gmail.com', 'mmm'),
+(26, 'Corinah', 'ctarantsoa@yahoo.fr', '1234'),
+(27, 'mialy', 'mialitiana@gmail.com', 'heriniaina'),
+(28, 'lucien', 'lucien@gmail.com', '123456'),
+(29, 'ramaitre', 'test@gmail.com', 'pikachu'),
+(30, 'Corinah', 'rtarantsoa@gmail.com', '1234'),
+(31, 'mendrika', 'mendrika@gmail.com', '1'),
+(32, 'Corinah', 'test@gmail.com', '12'),
+(33, 'Corinah', 'test@gmail.com', '12'),
+(34, 'Corinah', 'test@gmail.com', '2'),
+(35, 'RAZA', 'test@gmail.com', '1230'),
+(36, 'sam', 'samrkt@gmail.com', '1');
 
 -- --------------------------------------------------------
 
@@ -198,23 +247,24 @@ CREATE TABLE `region` (
   `image_region` varchar(255) NOT NULL,
   `description1` text NOT NULL,
   `description2` text NOT NULL,
-  `description3` text NOT NULL
+  `description3` text NOT NULL,
+  `maps` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `region`
 --
 
-INSERT INTO `region` (`id`, `nom_province`, `nom_region`, `descriptions`, `code_postal`, `image_region`, `description1`, `description2`, `description3`) VALUES
-(5, 'Fianarantsoa', 'Haute Mahatsiatra', 'Paysages à couper le souffle : Haute Matsiatra est une région montagneuse qui offre des panoramas à couper le souffle. Les collines verdoyantes, les vastes vallées, les rizières en terrasses et les forêts luxuriantes créent un tableau naturel captivant. Vous pourrez explorer les montagnes majestueuses telles que l   Andringitra et le mont Ibity, ainsi que de nombreux lacs et cascades qui parsèment la région.', '301', 'drones.mg_336017000_947527152927224_5353628369049753690_n.jpg', 'Paysages à couper le souffle : Haute Matsiatra est une région montagneuse qui offre des panoramas à couper le souffle. Les collines verdoyantes, les vastes vallées, les rizières en terrasses et les forêts luxuriantes créent un tableau naturel captivant. Vous pourrez explorer les montagnes majestueuses telles que l   Andringitra et le mont Ibity, ainsi que de nombreux lacs et cascades qui parsèment la région.', 'Parcs nationaux et réserves naturelles : Les amoureux de la faune et de la flore seront comblés par la diversité de la biodiversité présente dans la région d   Haute Matsiatra. Le Parc National de l   Andringitra est un incontournable, abritant des espèces endémiques de lémuriens, des oiseaux rares et des plantes uniques. Vous pourrez également visiter la Réserve Naturelle Intégrale d   Ibity, une zone préservée où la nature est reine.', 'Rencontres culturelles : Haute Matsiatra est habitée par plusieurs groupes ethniques malgaches, chacun apportant ses traditions, sa musique et ses danses distinctives. Vous aurez l   occasion de vous immerger dans la vie quotidienne des habitants, d   assister à des cérémonies traditionnelles et de goûter à la délicieuse cuisine malgache. Ne manquez pas le marché de Fianarantsoa, où vous pourrez acheter des produits artisanaux locaux en souvenir.'),
-(7, 'Tananarive', 'Analamanga', 'Analamanga est l\'une des vingt-trois régions de Madagascar. Elle est située dans la province d\'Antananarivo, dans le centre de l\'île\r\n', '101', 'Tana.jpg', 'La région de Analamanga est constituée de huit districts et 134 communes :\r\n\r\nDistrict d\'Ambohidratrimo\r\nDistrict d\'Andramasina\r\nDistrict d\'Anjozorobe\r\nDistrict d\'Ankazobe\r\nDistrict d\'Antananarivo-Atsimondrano\r\nDistrict d\'Antananarivo-Avaradrano\r\nDistrict d\'Antananarivo-Renivohitra\r\nDistrict de Manjakandriana\r\n\r\n', 'Coordonnées : 18° 56′ 24″ sud, 47° 31′ 12″  Densité : 152 hab./km2', 'Superficie : 17 488 km² \r\nCapitale : Tananarive \r\nPopulation : 3,618 millions (2018) '),
-(8, 'Tuléar', 'Menabe', 'Le Menabe est l\'une des vingt-trois régions de Madagascar. Elle est située dans la province de Toliara, dans le sud-ouest de l\'île.', 'Coordonnées	20° 18′ 00″ sud, 44° 16′ 48″ est Super', 'alealenati_351477826_1240658313274327_4762421463528455821_n.jfif', 'Sa capitale est Morondava.  La population de la région est estimée à environ 390 800 habitants, en 2004, sur une superficie de 46 121 km21', 'La région est divisée en cinq districts :  district de Belo-sur-Tsiribihina ; district de Mahabo ; district de Manja ; district de Miandrivazo ; district de Morondava.', 'Population	390 800 hab. (2004) Densité	8,5 hab./km2 Coordonnées	20° 18′ 00″ sud, 44° 16′ 48″ est Superficie	4 612 100 ha = 46 121 km2'),
-(9, 'Tamatave', 'Analanjirofo', 'La région est composée de six districts :  District de Fénérive-Est District de Manarana-Nord District de Maroantsetra District de Nosy Boraha District de Soanierana Ivongo District de Vavatenina', '509', 'andry.dey_316778832_1318735172291692_1946067142628915112_n.jfif', 'La région est composée de six districts :  District de Fénérive-Est District de Manarana-Nord District de Maroantsetra District de Nosy Boraha District de Soanierana Ivongo District de Vavatenina', 'Analanjirofo dispose encore d   une importante couverture forestière par rapport aux autres régions de Madagascar. Le taux de couverture forestier serait estimé à 50 %, en comptabilisant domaines forestiers de l   État et forêts domaniales.', 'Population	1 035 132 hab. (20131) Densité	47 hab./km2 Géographie Coordonnées	16° 35′ 39″ sud, 49° 26′ 19″ est Superficie	2 193 000 ha = 21 930 km2 Divers Devise	\"Ovy haniry tsy tam-bato\"'),
-(10, 'Majunga', 'Betsiboka', 'Betsiboka est l\'une des vingt-trois régions de Madagascar. Elle est située dans la province de Majunga, dans le nord de l\'île.\r\nLe pont de Betsiboka est un pont en treillis par lequel la Route nationale 4 franchit le fleuve Betsiboka1, dans le district de Maevatanana, dans la région de Betsiboka, à Madagascar. Long de 350 mètres, le pont de Betsiboka est un des plus longs ponts de l\'île.', '', 'luch_photogram_360143144_805174601096644_2593340722222065686_n.jpg', 'Longueur	531 km Bassin	11 800 ou 49 000 km2 Bassin collecteur	Betsiboka Débit moyen	278 m3/s', 'Source	confluence Jabo et Amparihibe · Coordonnées	18° 21′ 57″ S, 47° 29′ 21″ E Embouchure	Canal du Mozambique Océan Indien · Localisation	Baie de Bombetoka près de Majunga · Altitude	0 m · Coordonnées	15° 43′ 33″ S, 46° 16′ 16″ E', 'Principaux affluents · Rive gauche	Andriantoany, Ikopa · Rive droite	Kamoro'),
-(11, 'Diego-Suarez', 'Diana', 'Diana est l\'une des vingt-trois régions de Madagascar, située dans la province de Diego-Suarez, dans le nord de l\'île.\r\n\r\n', '204', 'rmoralles_353619276_763812038772167_3774398611461932855_n.jpg', 'La région est divisée en cinq districts:  District d   Antsiranana I District d   Antsiranana II District d   Ambilobe District d   Ambanja District de Nosy Be', 'La capitale de la région est Antsiranana (Diégo-Suarez). La région est la plus septentrionale de l   île, frontalière avec les régions Sava et Sofia.  La population de la région est estimée à environ 680 000 habitants, en 2010, sur une superficie de 19 266 km2.', 'Densité	35 hab./km2 Géographie Coordonnées	12° 16′ 12″ sud, 49° 16′ 48″ est'),
-(12, 'Toliara', 'Anosy', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', '601', 'anosytourisme_305030493_1812997462377480_2028408217200870366_n.jfif', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', 'Cultures et traditions : Cette région est également un véritable trésor culturel. Vous aurez l   occasion de rencontrer des communautés locales chaleureuses et accueillantes, qui perpétuent des traditions séculaires. Assistez aux danses traditionnelles, participez à des cérémonies ancestrales et découvrez l   artisanat local, comme les sculptures en bois, les tissus colorés et les paniers tressés, qui reflètent l   identité culturelle unique de la région.', 'Aventure et exploration : Les passionnés d   aventure seront comblés dans la région Sud Anosy. Explorez les grottes mystérieuses de Lavaka, où se cachent des stalactites et stalagmites impressionnants. Les amateurs de spéléologie y trouveront leur bonheur. Vous pouvez également faire du canoë-kayak sur la rivière Manambovo ou faire du snorkeling pour admirer les merveilles sous-marines près des côtes.'),
-(13, 'Tuléar', 'Anosy', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', '601', 'anosytourisme_305030493_1812997462377480_2028408217200870366_n.jfif', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', 'Cultures et traditions : Cette région est également un véritable trésor culturel. Vous aurez l   occasion de rencontrer des communautés locales chaleureuses et accueillantes, qui perpétuent des traditions séculaires. Assistez aux danses traditionnelles, participez à des cérémonies ancestrales et découvrez l   artisanat local, comme les sculptures en bois, les tissus colorés et les paniers tressés, qui reflètent l   identité culturelle unique de la région.', 'Aventure et exploration : Les passionnés d   aventure seront comblés dans la région Sud Anosy. Explorez les grottes mystérieuses de Lavaka, où se cachent des stalactites et stalagmites impressionnants. Les amateurs de spéléologie y trouveront leur bonheur. Vous pouvez également faire du canoë-kayak sur la rivière Manambovo ou faire du snorkeling pour admirer les merveilles sous-marines près des côtes.'),
-(14, 'Majunga', 'Boeny', 'Paysages côtiers à couper le souffle : Boeny est béni par une étendue de littoral spectaculaire. Les plages de sable blanc bordées de palmiers vous invitent à vous détendre et à vous émerveiller devant des couchers de soleil inoubliables. Parmi les plages les plus célèbres, on retrouve la plage de Mahajanga, propice à la baignade et aux sports nautiques, ainsi que la plage de Katsepy, qui offre une ambiance plus tranquille et authentique.', '401', 'leslie.wilmet_297082388_993497251328796_4975673279305314450_n.jpg', 'Paysages côtiers à couper le souffle : Boeny est béni par une étendue de littoral spectaculaire. Les plages de sable blanc bordées de palmiers vous invitent à vous détendre et à vous émerveiller devant des couchers de soleil inoubliables. Parmi les plages les plus célèbres, on retrouve la plage de Mahajanga, propice à la baignade et aux sports nautiques, ainsi que la plage de Katsepy, qui offre une ambiance plus tranquille et authentique.', 'Aventure dans les parcs nationaux : Pour les amoureux de la nature, la région Boeny abrite le Parc National d   Ankarafantsika, un écosystème unique abritant une variété de faune et de flore. Vous aurez la chance d   observer des lémuriens, des oiseaux exotiques et des caméléons parmi une riche biodiversité. Les passionnés d   ornithologie apprécieront particulièrement cette région, car elle regorge d   espèces aviaires endémiques.', 'Exploration des Tsingy : Ne manquez pas l   occasion de découvrir les Tsingy de Namoroka, des formations géologiques étonnantes en calcaire. Ces pics acérés et escarpés offrent un paysage spectaculaire et sont un véritable paradis pour les adeptes de randonnées et d   escalade. En plus de profiter de panoramas à couper le souffle, vous aurez peut-être la chance de rencontrer des espèces de lémuriens et d   autres animaux rares.');
+INSERT INTO `region` (`id`, `nom_province`, `nom_region`, `descriptions`, `code_postal`, `image_region`, `description1`, `description2`, `description3`, `maps`) VALUES
+(5, 'Fianarantsoa', 'Haute Mahatsiatra', 'Paysages à couper le souffle : Haute Matsiatra est une région montagneuse qui offre des panoramas à couper le souffle. Les collines verdoyantes, les vastes vallées, les rizières en terrasses et les forêts luxuriantes créent un tableau naturel captivant. Vous pourrez explorer les montagnes majestueuses telles que l   Andringitra et le mont Ibity, ainsi que de nombreux lacs et cascades qui parsèment la région.', '301', 'drones.mg_336017000_947527152927224_5353628369049753690_n.jpg', 'Paysages à couper le souffle : Haute Matsiatra est une région montagneuse qui offre des panoramas à couper le souffle. Les collines verdoyantes, les vastes vallées, les rizières en terrasses et les forêts luxuriantes créent un tableau naturel captivant. Vous pourrez explorer les montagnes majestueuses telles que l   Andringitra et le mont Ibity, ainsi que de nombreux lacs et cascades qui parsèment la région.', 'Parcs nationaux et réserves naturelles : Les amoureux de la faune et de la flore seront comblés par la diversité de la biodiversité présente dans la région d   Haute Matsiatra. Le Parc National de l   Andringitra est un incontournable, abritant des espèces endémiques de lémuriens, des oiseaux rares et des plantes uniques. Vous pourrez également visiter la Réserve Naturelle Intégrale d   Ibity, une zone préservée où la nature est reine.', 'Rencontres culturelles : Haute Matsiatra est habitée par plusieurs groupes ethniques malgaches, chacun apportant ses traditions, sa musique et ses danses distinctives. Vous aurez l   occasion de vous immerger dans la vie quotidienne des habitants, d   assister à des cérémonies traditionnelles et de goûter à la délicieuse cuisine malgache. Ne manquez pas le marché de Fianarantsoa, où vous pourrez acheter des produits artisanaux locaux en souvenir.', ''),
+(7, 'Tananarive', 'Analamanga', 'Analamanga est l\'une des vingt-trois régions de Madagascar. Elle est située dans la province d\'Antananarivo, dans le centre de l\'île\r\n', '101', 'Tana.jpg', 'La région de Analamanga est constituée de huit districts et 134 communes :\r\n\r\nDistrict d\'Ambohidratrimo\r\nDistrict d\'Andramasina\r\nDistrict d\'Anjozorobe\r\nDistrict d\'Ankazobe\r\nDistrict d\'Antananarivo-Atsimondrano\r\nDistrict d\'Antananarivo-Avaradrano\r\nDistrict d\'Antananarivo-Renivohitra\r\nDistrict de Manjakandriana\r\n\r\n', 'Coordonnées : 18° 56′ 24″ sud, 47° 31′ 12″  Densité : 152 hab./km2', 'Superficie : 17 488 km² \r\nCapitale : Tananarive \r\nPopulation : 3,618 millions (2018) ', ''),
+(8, 'Tuléar', 'Menabe', 'Le Menabe est l\'une des vingt-trois régions de Madagascar. Elle est située dans la province de Toliara, dans le sud-ouest de l\'île.', 'Coordonnées	20° 18′ 00″ sud, 44° 16′ 48″ est Super', 'alealenati_351477826_1240658313274327_4762421463528455821_n.jfif', 'Sa capitale est Morondava.  La population de la région est estimée à environ 390 800 habitants, en 2004, sur une superficie de 46 121 km21', 'La région est divisée en cinq districts :  district de Belo-sur-Tsiribihina ; district de Mahabo ; district de Manja ; district de Miandrivazo ; district de Morondava.', 'Population	390 800 hab. (2004) Densité	8,5 hab./km2 Coordonnées	20° 18′ 00″ sud, 44° 16′ 48″ est Superficie	4 612 100 ha = 46 121 km2', ''),
+(9, 'Tamatave', 'Analanjirofo', 'La région est composée de six districts :  District de Fénérive-Est District de Manarana-Nord District de Maroantsetra District de Nosy Boraha District de Soanierana Ivongo District de Vavatenina', '509', 'andry.dey_316778832_1318735172291692_1946067142628915112_n.jfif', 'La région est composée de six districts :  District de Fénérive-Est District de Manarana-Nord District de Maroantsetra District de Nosy Boraha District de Soanierana Ivongo District de Vavatenina', 'Analanjirofo dispose encore d   une importante couverture forestière par rapport aux autres régions de Madagascar. Le taux de couverture forestier serait estimé à 50 %, en comptabilisant domaines forestiers de l   État et forêts domaniales.', 'Population	1 035 132 hab. (20131) Densité	47 hab./km2 Géographie Coordonnées	16° 35′ 39″ sud, 49° 26′ 19″ est Superficie	2 193 000 ha = 21 930 km2 Divers Devise	\"Ovy haniry tsy tam-bato\"', ''),
+(10, 'Majunga', 'Betsiboka', 'Betsiboka est l\'une des vingt-trois régions de Madagascar. Elle est située dans la province de Majunga, dans le nord de l\'île.\r\nLe pont de Betsiboka est un pont en treillis par lequel la Route nationale 4 franchit le fleuve Betsiboka1, dans le district de Maevatanana, dans la région de Betsiboka, à Madagascar. Long de 350 mètres, le pont de Betsiboka est un des plus longs ponts de l\'île.', '', 'luch_photogram_360143144_805174601096644_2593340722222065686_n.jpg', 'Longueur	531 km Bassin	11 800 ou 49 000 km2 Bassin collecteur	Betsiboka Débit moyen	278 m3/s', 'Source	confluence Jabo et Amparihibe · Coordonnées	18° 21′ 57″ S, 47° 29′ 21″ E Embouchure	Canal du Mozambique Océan Indien · Localisation	Baie de Bombetoka près de Majunga · Altitude	0 m · Coordonnées	15° 43′ 33″ S, 46° 16′ 16″ E', 'Principaux affluents · Rive gauche	Andriantoany, Ikopa · Rive droite	Kamoro', ''),
+(11, 'Diego-Suarez', 'Diana', 'Diana est l\'une des vingt-trois régions de Madagascar, située dans la province de Diego-Suarez, dans le nord de l\'île.\r\n\r\n', '204', 'rmoralles_353619276_763812038772167_3774398611461932855_n.jpg', 'La région est divisée en cinq districts:  District d   Antsiranana I District d   Antsiranana II District d   Ambilobe District d   Ambanja District de Nosy Be', 'La capitale de la région est Antsiranana (Diégo-Suarez). La région est la plus septentrionale de l   île, frontalière avec les régions Sava et Sofia.  La population de la région est estimée à environ 680 000 habitants, en 2010, sur une superficie de 19 266 km2.', 'Densité	35 hab./km2 Géographie Coordonnées	12° 16′ 12″ sud, 49° 16′ 48″ est', ''),
+(12, 'Toliara', 'Anosy', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', '601', 'anosytourisme_305030493_1812997462377480_2028408217200870366_n.jfif', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', 'Cultures et traditions : Cette région est également un véritable trésor culturel. Vous aurez l   occasion de rencontrer des communautés locales chaleureuses et accueillantes, qui perpétuent des traditions séculaires. Assistez aux danses traditionnelles, participez à des cérémonies ancestrales et découvrez l   artisanat local, comme les sculptures en bois, les tissus colorés et les paniers tressés, qui reflètent l   identité culturelle unique de la région.', 'Aventure et exploration : Les passionnés d   aventure seront comblés dans la région Sud Anosy. Explorez les grottes mystérieuses de Lavaka, où se cachent des stalactites et stalagmites impressionnants. Les amateurs de spéléologie y trouveront leur bonheur. Vous pouvez également faire du canoë-kayak sur la rivière Manambovo ou faire du snorkeling pour admirer les merveilles sous-marines près des côtes.', ''),
+(13, 'Tuléar', 'Anosy', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', '601', 'anosytourisme_305030493_1812997462377480_2028408217200870366_n.jfif', 'Paysages époustouflants : La région Sud Anosy est caractérisée par ses paysages variés et époustouflants. Vous y découvrirez des montagnes majestueuses, des savanes dorées, des forêts tropicales luxuriantes et des plages de sable blanc bordées par des eaux turquoise. Le parc national de l   Andohahela et le parc national d   Andringitra sont des incontournables pour les amateurs de randonnées, d   escalade et d   observation de la faune et de la flore endémiques.', 'Cultures et traditions : Cette région est également un véritable trésor culturel. Vous aurez l   occasion de rencontrer des communautés locales chaleureuses et accueillantes, qui perpétuent des traditions séculaires. Assistez aux danses traditionnelles, participez à des cérémonies ancestrales et découvrez l   artisanat local, comme les sculptures en bois, les tissus colorés et les paniers tressés, qui reflètent l   identité culturelle unique de la région.', 'Aventure et exploration : Les passionnés d   aventure seront comblés dans la région Sud Anosy. Explorez les grottes mystérieuses de Lavaka, où se cachent des stalactites et stalagmites impressionnants. Les amateurs de spéléologie y trouveront leur bonheur. Vous pouvez également faire du canoë-kayak sur la rivière Manambovo ou faire du snorkeling pour admirer les merveilles sous-marines près des côtes.', ''),
+(14, 'Majunga', 'Boeny', 'Paysages côtiers à couper le souffle : Boeny est béni par une étendue de littoral spectaculaire. Les plages de sable blanc bordées de palmiers vous invitent à vous détendre et à vous émerveiller devant des couchers de soleil inoubliables. Parmi les plages les plus célèbres, on retrouve la plage de Mahajanga, propice à la baignade et aux sports nautiques, ainsi que la plage de Katsepy, qui offre une ambiance plus tranquille et authentique.', '401', 'leslie.wilmet_297082388_993497251328796_4975673279305314450_n.jpg', 'Paysages côtiers à couper le souffle : Boeny est béni par une étendue de littoral spectaculaire. Les plages de sable blanc bordées de palmiers vous invitent à vous détendre et à vous émerveiller devant des couchers de soleil inoubliables. Parmi les plages les plus célèbres, on retrouve la plage de Mahajanga, propice à la baignade et aux sports nautiques, ainsi que la plage de Katsepy, qui offre une ambiance plus tranquille et authentique.', 'Aventure dans les parcs nationaux : Pour les amoureux de la nature, la région Boeny abrite le Parc National d   Ankarafantsika, un écosystème unique abritant une variété de faune et de flore. Vous aurez la chance d   observer des lémuriens, des oiseaux exotiques et des caméléons parmi une riche biodiversité. Les passionnés d   ornithologie apprécieront particulièrement cette région, car elle regorge d   espèces aviaires endémiques.', 'Exploration des Tsingy : Ne manquez pas l   occasion de découvrir les Tsingy de Namoroka, des formations géologiques étonnantes en calcaire. Ces pics acérés et escarpés offrent un paysage spectaculaire et sont un véritable paradis pour les adeptes de randonnées et d   escalade. En plus de profiter de panoramas à couper le souffle, vous aurez peut-être la chance de rencontrer des espèces de lémuriens et d   autres animaux rares.', '');
 
 -- --------------------------------------------------------
 
@@ -265,6 +315,12 @@ ALTER TABLE `hotel`
   ADD PRIMARY KEY (`id_hotel`);
 
 --
+-- Index pour la table `panier`
+--
+ALTER TABLE `panier`
+  ADD PRIMARY KEY (`id_panier`);
+
+--
 -- Index pour la table `personne`
 --
 ALTER TABLE `personne`
@@ -311,10 +367,16 @@ ALTER TABLE `hotel`
   MODIFY `id_hotel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT pour la table `panier`
+--
+ALTER TABLE `panier`
+  MODIFY `id_panier` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `personne`
 --
 ALTER TABLE `personne`
-  MODIFY `id_personne` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_personne` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT pour la table `provinces`

@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include "database.php";
+session_start();
 if(isset($_POST['signup'])) 
 {
         $user = $_POST['name'];
@@ -16,9 +17,13 @@ if(isset($_POST['signup']))
         if (!$add_user) {
             echo "something went wrong ". mysqli_error($conn);
         }else{
+<<<<<<< HEAD
             $_SESSION['name'] = $query['nom_personne'];
             $_SESSION['email'] = $query['email'];
             $_SESSION['pass'] = $query['mot_de_passe'];
+=======
+            $_SESSION['nom']=$user;
+>>>>>>> d79431931ce3a033a9236a4107d1887020ccb351
         }
 }
 ?>

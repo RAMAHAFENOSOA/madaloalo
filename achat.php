@@ -75,51 +75,84 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
         <?php foreach ($achats as $achat): ?>
           <?php if ($achat['categorie'] == "sandale") { ?>
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-sandale">
-            <div class="portfolio-item">
+            <div class="col-lg-4 col-md-6 portfolio-wrap filter-sandale">
+            <form action="#" method="post">
+            <div class="portfolio-item" id="element--<?php echo($achat['id_achat'])?>">
               <img src="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
-                <div style="display: flex;justify-content: center;">
+                <div class="product_lower_section">
                   <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <a href="#"><i class="bx bx-plus"></i></a>
                 </div> 
               </div>
             </div>
+            <div class="product_lower_section">
+              <p><?php echo($achat['prix_objet'])?></p>
+              <div class="quantity-selector">
+                  <input type="hidden" name="id_article" value="<?php echo($achat['id_achat'])?>">
+                  <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
+                  <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
+                  <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
+                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"></i></button>
+              </div>
+            </div>
+          </form>
           </div>
           <?php } ?>
           <?php endforeach; ?>
 
           <?php foreach ($achats as $achat): ?>
           <?php if ($achat['categorie'] == "vase") { ?>
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-vase">
-            <div class="portfolio-item">
+            <div class="col-lg-4 col-md-6 portfolio-wrap filter-vase">
+            <form action="#" method="post">
+            <div class="portfolio-item" id="element--<?php echo($achat['id_achat'])?>">
               <img src="assets/img/vases/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
-                <div style="display: flex;justify-content: center;">
+                <div class="product_lower_section">
                   <a href="assets/img/vases/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <a href="#"><i class="bx bx-plus"></i></a>
                 </div> 
               </div>
             </div>
+            <div style="display:flex;justify-content:space-between">
+              <p><?php echo($achat['prix_objet'])?></p>
+              <div class="quantity-selector">
+                  <input type="hidden" name="id_article" value="<?php echo($achat['id_achat'])?>">
+                  <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
+                  <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
+                  <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
+                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"></i></button>
+              </div>
+            </div>
+          </form>
           </div>
           <?php } ?>
           <?php endforeach; ?>
 
           <?php foreach ($achats as $achat): ?>
           <?php if ($achat['categorie'] == "art") { ?>
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-art">
-            <div class="portfolio-item">
+            <div class="col-lg-4 col-md-6 portfolio-wrap filter-art">
+            <form action="#" method="post">
+            <div class="portfolio-item" id="element--<?php echo($achat['id_achat'])?>">
               <img src="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
-                <div style="display: flex;justify-content: center;">
+                <div class="product_lower_section">
                   <a href="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <a href="#"><i class="bx bx-plus"></i></a>
                 </div> 
               </div>
             </div>
+            <div style="display:flex;justify-content:space-between">
+              <p><?php echo($achat['prix_objet'])?></p>
+              <div class="quantity-selector">
+                  <input type="hidden" name="id_article" value="<?php echo($achat['id_achat'])?>">
+                  <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
+                  <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
+                  <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
+                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"></i></button>
+              </div>
+            </div>
+          </form>
           </div>
           <?php } ?>
           <?php endforeach; ?>
@@ -146,7 +179,28 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function incrementQuantity() {
+      // console.log('l article numero '+event.target.id+' a ete cliquee');
+      // Sélectionne l'élément HTML avec l'ID 'quantity'
+      var quantity = document.getElementById('quantity-selector'+event.target.id);
+      // Récupère la valeur actuelle de la quantité en tant que nombre
+      var currentQuantity = parseInt(quantity.value);
+       // Augmente la valeur de la quantité de 1
+       quantity.value = currentQuantity + 1;
+      
+      // Ce code commence par sélectionner un élément HTML qui a l'identifiant 'quantity'. Ensuite, il prend la valeur actuelle de cet élément (supposons que c'est un champ de saisie) et la convertit en nombre (au lieu de texte). Enfin, il ajoute 1 à cette valeur et met à jour la valeur dans l'élément HTML 'quantity'. En résumé, ce code incrémente la quantité affichée par 1.
+    }
 
+    function decrementQuantity() {
+      // console.log('l article numero '+event.target.id+' a ete cliquee');
+      var quantity = document.getElementById('quantity-selector'+event.target.id);
+      var currentQuantity = parseInt(quantity.value);
+      if (currentQuantity >= 1) {
+        quantity.value = currentQuantity - 1;
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -19,7 +19,11 @@ if(isset($_POST['signin']))
         echo "Connexion réussie! Bonjour, $username!";
         echo "<script type='text/javascript'>alert('Connexion réussie! Bonjour, $username!')</script>";
         echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
+<<<<<<< HEAD
         $_SESSION['your_name']=$username;
+=======
+        $_SESSION['nom']=$username;
+>>>>>>> d79431931ce3a033a9236a4107d1887020ccb351
     } else {
         // User does not exist or credentials are incorrect
         echo "Mot de passe ou utilisateur invalide";
