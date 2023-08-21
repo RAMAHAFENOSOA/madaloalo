@@ -60,7 +60,7 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
                 <a href="#">Mon compte</a>
               </li>
               <li class="dropdown">
-                <a href="#">Forum</a>
+                <a href="Forum/publish-question.php">Forum</a>
               </li>
               <li class="dropdown">
                 <a href="#" class="deconnexion">Deconnexion</a>
