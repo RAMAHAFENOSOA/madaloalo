@@ -2319,3 +2319,30 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+
+.product_lower_section {
+  display:flex;
+  justify-content:space-between;
+}
+
+.quantity-button {
+  border: none;
+  font-size: 20px;
+}
+
+.quantity-selector-input {
+  border: none;
+  max-width: 50px;
+  text-align: center;
+}
+
+.quantity-button-minus,
+.quantity-button-plus {
+  padding: 7px;
+  background: #4fa6d5;
+  border-radius: 50%;
+  border: none;
+  color: white;
+}
+
+
