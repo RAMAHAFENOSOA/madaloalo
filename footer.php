@@ -59,7 +59,7 @@
   <div>
     <img src="assets/img/ico-orangemoney.jpg" class="paiements-logo" alt="">
     <img src="assets/img/visa-logo-800x450.webp" class="paiements-logo" alt="">
-    <img src="assets/img/brandhistory_mc1996_100_2x.png" class="paiements-logo" alt="">
+    <img src="assets/img/logo-taptapsend.png" class="paiements-logo" alt="">
   </div>
   <div class="copyright">
      Copyright &copy; 2023 <strong>Madaloalo.com | Madagascar</strong> 

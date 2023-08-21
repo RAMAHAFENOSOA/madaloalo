@@ -94,7 +94,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <div class="icon-box icon-box-green">
               <div class="icon"><i class="bi bi-cart3"></i></div>
-              <h4 class="title"><a href="achat.php"></a>Achat</h4> 
+              <h4 class="title"><a href="achat.php">Achat</a></h4> 
               <p class="description">Bénéficier d'une facilité et commodité de l'achat en ligne</p>
             </div>
     
