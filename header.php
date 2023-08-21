@@ -49,6 +49,7 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           <li><a href="contact.php">Contact</a></li>
           <li><a href="signup.php">S'inscrire</a></li>
           <li><a href="signin.php">Se connecter</a></li>
+          <li><a id="search-button"><i style="font-size:20px;color:white;" class="bi bi-search"></i></a></li>
           <li><a id="cartButton"><i style="font-size:20px;color:white;" class="bi bi-cart3"></i></a></li>
           <li class="dropdown"><a href="#"><i style="font-size:20px;color:white;" class="bi bi-person"></i><i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -75,3 +76,4 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
   </header><!-- End Header -->
   <div class="overlay" id="overlay"></div>
   <?php include 'mini-panier.php'; ?>
+  <?php include 'barre-recherche.php'; ?>
