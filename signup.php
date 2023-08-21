@@ -1,32 +1,4 @@
-<?php 
-session_start();
-include "database.php";
-session_start();
-if(isset($_POST['signup'])) 
-{
-        $user = $_POST['name'];
-        $email = $_POST['email'];   
-        $pass = $_POST['pass'];
-    
-        // SQL query to insert user data into the personne table
-        $query= "INSERT INTO personne(nom_personne, email,mot_de_passe) VALUES('{$user}','{$email}','{$pass}')";
-        $add_user = mysqli_query($conn,$query);
 
-        
-        // displaying proper message for the user to see whether the query executed perfectly or not 
-        if (!$add_user) {
-            echo "something went wrong ". mysqli_error($conn);
-        }else{
-<<<<<<< HEAD
-            $_SESSION['name'] = $query['nom_personne'];
-            $_SESSION['email'] = $query['email'];
-            $_SESSION['pass'] = $query['mot_de_passe'];
-=======
-            $_SESSION['nom']=$user;
->>>>>>> d79431931ce3a033a9236a4107d1887020ccb351
-        }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +28,28 @@ if(isset($_POST['signup']))
 </head>
 
 <body>
-<?php include "header.php" ?>
+<?php include "header.php";
+include "database.php";
+if(isset($_POST['signup'])) 
+{
+        $user = $_POST['name'];
+        $email = $_POST['email'];   
+        $pass = $_POST['pass'];
+    
+        // SQL query to insert user data into the personne table
+        $query= "INSERT INTO personne(nom_personne, email,mot_de_passe) VALUES('{$user}','{$email}','{$pass}')";
+        $add_user = mysqli_query($conn,$query);
+
+        
+        // displaying proper message for the user to see whether the query executed perfectly or not 
+        if (!$add_user) {
+            echo "something went wrong ". mysqli_error($conn);
+        }else{
+            $_SESSION['nom']=$user;
+        }
+} 
+
+?>
     
         <!-- Sign up form -->
         <section class="signup">
