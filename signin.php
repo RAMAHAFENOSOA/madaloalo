@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "database.php";
 if(isset($_POST['signin'])) 
 {
@@ -18,6 +19,7 @@ if(isset($_POST['signin']))
         echo "Connexion réussie! Bonjour, $username!";
         echo "<script type='text/javascript'>alert('Connexion réussie! Bonjour, $username!')</script>";
         echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
+        $_SESSION['nom']=$username;
     } else {
         // User does not exist or credentials are incorrect
         echo "Mot de passe ou utilisateur invalide";

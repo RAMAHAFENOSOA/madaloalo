@@ -1,5 +1,6 @@
 <?php 
 include "database.php";
+session_start();
 if(isset($_POST['signup'])) 
 {
         $user = $_POST['name'];
@@ -13,6 +14,8 @@ if(isset($_POST['signup']))
         // displaying proper message for the user to see whether the query executed perfectly or not 
         if (!$add_user) {
             echo "something went wrong ". mysqli_error($conn);
+        }else{
+            $_SESSION['nom']=$user;
         }
 }
 ?>

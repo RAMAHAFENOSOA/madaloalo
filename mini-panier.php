@@ -73,6 +73,9 @@
         <h5 style="text-align: center;">Panier</h5>
       </div>
     </div>
+    <div style="overflow:scroll;width:100%;height:80%">
+        
+    </div>
     <div class="closeButtonBottom">
     <button type="button" class="close close-button" id="closeButtonBottom" aria-label="Fermer" style="font-size:20px;">
       <span aria-hidden="true">Continuer Achat</span>

@@ -85,6 +85,11 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <a href="#"><i class="bx bx-plus"></i></a>
                 </div> 
               </div>
+              
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <p><?php echo($achat['prix_objet'])?></p>
+              <a href="#"><i class="bx bx-plus"></i></a>
             </div>
           </div>
           <?php } ?>
@@ -92,7 +97,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
           <?php foreach ($achats as $achat): ?>
           <?php if ($achat['categorie'] == "vase") { ?>
-          <div class="col-lg-4 col-md-6 portfolio-wrap filter-vase">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-vase" style>
             <div class="portfolio-item">
               <img src="assets/img/vases/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -102,6 +107,10 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <a href="#"><i class="bx bx-plus"></i></a>
                 </div> 
               </div>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <p><?php echo($achat['prix_objet'])?></p>
+              <a href="#"><i class="bx bx-plus"></i></a>
             </div>
           </div>
           <?php } ?>
@@ -116,10 +125,18 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div style="display: flex;justify-content: center;">
                   <a href="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <a href="#"><i class="bx bx-plus"></i></a>
+                  <form action="mini-panier.php" method="post">
+                      <input type="number" name="nbr_achete" id="">
+
+                  </form>
                 </div> 
               </div>
             </div>
+            <div style="display:flex;justify-content:space-between">
+              <p><?php echo($achat['prix_objet'])?></p>
+              <i class="bx bx-plus"></i>
+            </div>
+
           </div>
           <?php } ?>
           <?php endforeach; ?>

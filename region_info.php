@@ -82,7 +82,7 @@ $region = mysqli_fetch_assoc($result);
 
       </div>
     </section><!-- End About Section -->
-
+  <iframe src="<?php echo($region['maps']) ?>" ></iframe>
 
 
 

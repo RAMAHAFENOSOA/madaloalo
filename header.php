@@ -1,4 +1,5 @@
 <?php
+  session_start();
 include "database.php";
 $query = "SELECT * FROM provinces";
 $result = mysqli_query($conn,$query);
@@ -47,26 +48,43 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
             </ul>
           </li>
           <li><a href="contact.php">Contact</a></li>
-          <li><a href="signup.php">S'inscrire</a></li>
-          <li><a href="signin.php">Se connecter</a></li>
+          <?php
+              if(!isset($_SESSION['nom']))
+              {
+          ?>
+              <li><a href="signup.php">S'inscrire</a></li>
+
+              <li><a href="signin.php">Se connecter</a></li>
+          <?php
+              }
+          ?>
           <li><a id="search-button"><i style="font-size:20px;color:white;" class="bi bi-search"></i></a></li>
           <li><a id="cartButton"><i style="font-size:20px;color:white;" class="bi bi-cart3"></i></a></li>
-          <li class="dropdown"><a href="#"><i style="font-size:20px;color:white;" class="bi bi-person"></i><i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li class="dropdown">
-                <a href="#" disable ><i class="bi bi-person-circle" style="font-size:30px"></i></a>
-              </li>
-              <li class="dropdown">
-                <a href="#">Mon compte</a>
-              </li>
-              <li class="dropdown">
-                <a href="#">Forum</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="deconnexion">Deconnexion</a>
-              </li>
-            </ul>
-          </li>
+          <?php
+                if(isset($_SESSION['nom'])){
+          ?>
+              <li class="dropdown" style=""><a href="#"><i style="font-size:20px;color:white;margin-right:60px;
+" class="bi bi-person"></i></a>
+                  <ul>
+                      <li class="dropdown">
+                        <a href="#" disable ><i class="bi bi-person-circle" style="font-size:30px"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a><?php echo($_SESSION['nom']) ?> </a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#">Forum</a>
+                      </li>
+                      <li class="dropdown">
+
+                        <a href="deconnexion.php" class="deconnexion">Deconnexion</a>
+                      </li>
+                  </ul>
+            </li>
+          <?php
+                }
+          ?> 
+          
           <!-- <li><a href="https://ispm-edu.com/" target="_blank"><img src="assets/img/logo_ispm.png" style="height:70px;width:70px;" alt="ispm_logo"></a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
