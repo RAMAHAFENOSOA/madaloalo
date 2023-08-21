@@ -2339,10 +2339,15 @@ section {
 .quantity-button-minus,
 .quantity-button-plus {
   padding: 7px;
-  background: #4fa6d5;
+  background: #1e4356;
   border-radius: 50%;
   border: none;
   color: white;
+}
+
+.quantity-button-minus:hover,
+.quantity-button-plus:hover {
+  background: #4fa6d5;
 }
 
 
