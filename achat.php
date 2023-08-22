@@ -82,14 +82,14 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div style="display: flex;justify-content: center;">
                   <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <a href="#"><i class="bx bx-plus"></i></a>
+                  <a href="mini-panier.php"><i class="bi bi-cart"></i> </a>
                 </div> 
               </div>
               
             </div>
             <div style="display:flex;justify-content:space-between">
               <p><?php echo($achat['prix_objet'])?></p>
-              <a href="#"><i class="bx bx-plus"></i></a>
+              <a href="mini-panier.php">  <i class="bi bi-cart"></i> </a>
             </div>
           </div>
           <?php } ?>
@@ -104,13 +104,13 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div style="display: flex;justify-content: center;">
                   <a href="assets/img/vases/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <a href="#"><i class="bx bx-plus"></i></a>
+                  <a href="mini-panier.php"><i class="bx bx-plus"></i></a>
                 </div> 
               </div>
             </div>
             <div style="display:flex;justify-content:space-between">
               <p><?php echo($achat['prix_objet'])?></p>
-              <a href="#"><i class="bx bx-plus"></i></a>
+              <a href="mini-panier.php"<i class="bi bi-cart"></i> </a>
             </div>
           </div>
           <?php } ?>
@@ -125,16 +125,16 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div style="display: flex;justify-content: center;">
                   <a href="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
-                  <form action="mini-panier.php" method="post">
-                      <input type="number" name="nbr_achete" id="">
-
-                  </form>
                 </div> 
               </div>
             </div>
             <div style="display:flex;justify-content:space-between">
               <p><?php echo($achat['prix_objet'])?></p>
-              <i class="bx bx-plus"></i>
+              <form action="mini-panier.php" method="post">
+                      <input type="number" name="nbr_achete" id="">
+                  </form>
+                  <a href="mini-panier.php"><i class="bi bi-cart"></i> </a>
+              
             </div>
 
           </div>
