@@ -1,36 +1,3 @@
-<?php
-session_start();
-include "database.php";
-if(isset($_POST['signin'])) 
-{
-    // Get the username and password from the form
-    $username = $_POST['your_name'];
-    $password = $_POST['your_pass'];
-
-    // Prepare and execute the query
-    $stmt = mysqli_prepare($conn, "SELECT * FROM personne WHERE nom_personne = ? AND mot_de_passe = ?");
-    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
-    mysqli_stmt_execute($stmt);
-
-    // Check if a matching user is found
-    $result = mysqli_stmt_get_result($stmt);
-    if (mysqli_num_rows($result) == 1) {
-        // User exists, do something (e.g., redirect to a member area)
-        echo "Connexion réussie! Bonjour, $username!";
-        echo "<script type='text/javascript'>alert('Connexion réussie! Bonjour, $username!')</script>";
-        echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
-        $_SESSION['nom']=$username;
-    } else {
-        // User does not exist or credentials are incorrect
-        echo "Mot de passe ou utilisateur invalide";
-        echo "<script type='text/javascript'>alert('Mot de passe ou utilisateur invalide')</script>";
-    }
-
-    // Close the database connection
-    mysqli_stmt_close($stmt);
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -67,7 +34,38 @@ if(isset($_POST['signin']))
 </head>
 
 <body>
-<?php include "header.php" ?>
+<?php 
+    include "header.php";
+include "database.php";
+if(isset($_POST['signin'])) 
+{
+    // Get the username and password from the form
+    $username = $_POST['your_name'];
+    $password = $_POST['your_pass'];
+
+    // Prepare and execute the query
+    $stmt = mysqli_prepare($conn, "SELECT * FROM personne WHERE nom_personne = ? AND mot_de_passe = ?");
+    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+    mysqli_stmt_execute($stmt);
+
+    // Check if a matching user is found
+    $result = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($result) == 1) {
+        // User exists, do something (e.g., redirect to a member area)
+        echo "Connexion réussie! Bonjour, $username!";
+        echo "<script type='text/javascript'>alert('Connexion réussie! Bonjour, $username!')</script>";
+        echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
+        $_SESSION['nom']=$username;
+    } else {
+        // User does not exist or credentials are incorrect
+        echo "Mot de passe ou utilisateur invalide";
+        echo "<script type='text/javascript'>alert('Mot de passe ou utilisateur invalide')</script>";
+    }
+
+    // Close the database connection
+    mysqli_stmt_close($stmt);
+}
+ ?>
 
         <!-- Sing in  Form -->
         <section class="sign-in">

@@ -60,7 +60,7 @@
 
 <section id="slide-down-section">
 <div class="search-section-header">
-    <h5 style="text-align: center;">Recherche</h5>
+    <!-- <h5 style="text-align: center;">Recherche</h5> -->
     <form class="search-form">
         <input type="text" class="search-input" placeholder="Ecrivez votre recherche...">
         <button type="submit" class="search-button">Recherche</button>
