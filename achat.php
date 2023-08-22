@@ -82,7 +82,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
-                  <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
+                  <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen" style="position:absolute; left:45%;  "></i></a>
                 </div> 
               </div>
             </div>

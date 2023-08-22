@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f5277c6325e3dd6782913a8e3b80460078097b30
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,8 +39,12 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <?php 
     include "header.php";
+=======
+<?php include "header.php" ;
+>>>>>>> f5277c6325e3dd6782913a8e3b80460078097b30
 include "database.php";
 if(isset($_POST['signin'])) 
 {
@@ -65,7 +74,12 @@ if(isset($_POST['signin']))
     // Close the database connection
     mysqli_stmt_close($stmt);
 }
+<<<<<<< HEAD
  ?>
+=======
+?>
+
+>>>>>>> f5277c6325e3dd6782913a8e3b80460078097b30
 
         <!-- Sing in  Form -->
         <section class="sign-in">

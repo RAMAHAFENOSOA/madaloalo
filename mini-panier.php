@@ -124,3 +124,5 @@ closeButtonBottom.addEventListener('click', () => {
   document.body.style.overflow = ''; // Réactiver le défilement
 });
 </script>
+</body>
+</html>
