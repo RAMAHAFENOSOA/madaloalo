@@ -124,52 +124,5 @@ closeButtonBottom.addEventListener('click', () => {
   document.body.style.overflow = ''; // Réactiver le défilement
 });
 </script>
-
-<!-- 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Exemple de Panier d'Achat</title>
-</head>
-<body>
-    <h1>Produits</h1>
-    <ul>
-        <li>
-            <span>Nom du produit: Produit 1</span>
-            <span>Prix: $10.00</span>
-            <button onclick="ajouterAuPanier('Produit 1', 10)">Ajouter au panier</button>
-        </li>
-        <li>
-            <span>Nom du produit: Produit 2</span>
-            <span>Prix: $15.00</span>
-            <button onclick="ajouterAuPanier('Produit 2', 15)">Ajouter au panier</button>
-        </li>
-    </ul>
-
-    <h1>Panier d'Achat</h1>
-    <ul id="panier">
-        Les produits ajoutés au panier seront affichés ici -->
-    <!-- </ul> -->
-
-    <!-- <script>
-        const panier = [];
-
-        function ajouterAuPanier(nomProduit, prixProduit) {
-            const produit = { nom: nomProduit, prix: prixProduit };
-            panier.push(produit);
-            afficherPanier();
-        }
-
-        function afficherPanier() {
-            const panierElement = document.getElementById('panier');
-            panierElement.innerHTML = '';
-
-            panier.forEach(produit => {
-                const li = document.createElement('li');
-                li.innerText = `${produit.nom} - Prix: ${produit.prix}`;
-                panierElement.appendChild(li);
-            });
-        }
-    </script> -->
 </body>
 </html>
