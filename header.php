@@ -60,24 +60,6 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           ?>
           <li><a id="search-button"><i style="font-size:20px;color:white;" class="bi bi-search"></i></a></li>
           <li><a id="cartButton"><i style="font-size:20px;color:white;" class="bi bi-cart3"></i></a></li>
-
-          <li class="dropdown"><a href="#"><i style="font-size:20px;color:white;" class="bi bi-person"></i><i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li class="dropdown">
-                <a href="#" disable ><i class="bi bi-person-circle" style="font-size:30px"></i></a>
-              </li>
-              <li class="dropdown">
-                <a href="#">Mon compte</a>
-              </li>
-              <li class="dropdown">
-                <a href="Forum/publish-question.php">Forum</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="deconnexion">Deconnexion</a>
-              </li>
-            </ul>
-          </li>
-
           <?php
                 if(isset($_SESSION['nom'])){
           ?>

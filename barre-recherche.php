@@ -60,14 +60,18 @@
 
 <section id="slide-down-section">
 <div class="search-section-header">
-    <h5 style="text-align: center;">Recherche</h5>
-    <form class="search-form">
-        <input type="text" class="search-input" placeholder="Ecrivez votre recherche...">
-        <button type="submit" class="search-button">Recherche</button>
+    <h5 style="text-align: center;"></h5>
+    <form class="search-form" method="GET" action="afficherRecherche.php">
+        <input type="text" class="search-input" name="s" placeholder="Ecrivez votre recherche..." autocomplete="off" style="width: 850px; height: 40px; border: 2px solid darkgray; outline: none;">
+        <button type="submit" class="search-button" name="envoyer" style="height: 40px;">Recherche</button>
     </form>
-    <button type="button" class="close-button" id="close-button" aria-label="Fermer" style="font-size:20px;">
+    <button type="button" class="close-button" id="close-button" aria-label="Fermer" style="font-size:20px; height: 30px;">
     <span aria-hidden="true">&times;</span>
     </button>
+
+
+
+    </section>
 </div>
 </section>
 <script>
