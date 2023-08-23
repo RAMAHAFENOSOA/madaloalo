@@ -207,7 +207,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
       var quantity = document.getElementById('quantity-selector'+event.target.id);  // Sélectionne l'élément HTML avec l'ID 'quantity'
       var currentQuantity = parseInt(quantity.value); // Récupère la valeur actuelle de la quantité en tant que nombre
       console.log(currentQuantity );
-     
+      console.log('testpush')
     
    
 
