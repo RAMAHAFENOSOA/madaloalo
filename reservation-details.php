@@ -283,7 +283,6 @@ if ($resultHotel->num_rows > 0) {
                 </div>
                 <div class="booking-form">
                         <form>
-                         
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Enter votre nom ">
                                 </div>
