@@ -82,8 +82,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
-                  <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen" style="position:absolute; left:45
-                  %;  "></i></a>
+                  <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen" style="position:absolute; left:45%;"></i></a>
                 </div> 
               </div>
             </div>
@@ -112,11 +111,11 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
-                  <a href="assets/img/vases/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
+                  <a href="assets/img/vases/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen" style="position:absolute; left:45%;"></i></a>
                 </div> 
               </div>
             </div>
-            <div style="display:flex;justify-content:space-between">
+            <div class="product_lower_section">
               <p><?php echo($achat['prix_objet'])?></p>
               <div class="quantity-selector">
                   <input type="hidden" name="id_article" value="<?php echo($achat['id_achat'])?>">
@@ -141,16 +140,16 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
-                  <a href="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
+                  <a href="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen" style="position:absolute; left:45%;"></i></a>
                 </div> 
               </div>
             </div>
-            <div style="display:flex;justify-content:space-between">
+            <div class="product_lower_section">
               <p><?php echo($achat['prix_objet'])?></p>
               <div class="quantity-selector">
                   <input type="hidden" name="id_article" value="<?php echo($achat['id_achat'])?>">
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
-                  <input name="quantite" class="quantity-selector-input" id="quantity-selector <?php echo($achat['id_achat'])?>" value="1">
+                  <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
                   <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
                   <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
