@@ -211,10 +211,17 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
         let panier = JSON.parse(localStorage.getItem('panier')) || [];
         const produitExistant = panier.find(produit => produit.id === event.target.id);
         if (produitExistant) {
-            produitExistant.quantite += selectedQuantity;
-        } else {
-            panier.push({ id: event.target.id, quantite: selectedQuantity });
-        }
+    if (produitExistant.quantite >= selectedQuantity) {
+        produitExistant.quantite -= selectedQuantity;
+    } else {
+        // Gérer le cas où la quantité demandée est supérieure à la quantité en stock
+        console.log("La quantité demandée est supérieure à la quantité en stock !");
+    }
+} else {
+    // Le produit n'existe pas dans le panier, donc on l'ajoute
+    panier.push({ id: event.target.id, quantite: selectedQuantity });
+}
+
         localStorage.setItem('panier', JSON.stringify(panier));
         afficherContenuPanier(panier);
         // Ouvrir le panier
