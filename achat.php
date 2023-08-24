@@ -204,55 +204,49 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
         quantity.value = currentQuantity - 1;
       }
     }
+
     function ajoutPanier() {
-    // Récupère la quantité sélectionnée pour ce produit
-    var quantitySelector = document.getElementById('quantity-selector' + event.target.id);
-    var selectedQuantity = parseInt(quantitySelector.value);
-
-    // Récupère le panier depuis le stockage local ou crée un panier vide
-    let panier = JSON.parse(localStorage.getItem('panier')) || [];
-
-    // Vérifie si ce produit est déjà dans le panier
-    const produitExistant = panier.find(produit => produit.id === event.target.id);
-
-    if (produitExistant) {
-      // Si le produit est déjà dans le panier, ajoute simplement à la quantité
-      produitExistant.quantite += selectedQuantity;
-    } else {
-      // Sinon, ajoute le produit avec sa quantité au panier
-      panier.push({ id: event.target.id, quantite: selectedQuantity });
+        var quantitySelector = document.getElementById('quantity-selector'+event.target.id);
+        var selectedQuantity = parseInt(quantitySelector.value);
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        const produitExistant = panier.find(produit => produit.id === event.target.id);
+        if (produitExistant) {
+            produitExistant.quantite += selectedQuantity;
+        } else {
+            panier.push({ id: event.target.id, quantite: selectedQuantity });
+        }
+        localStorage.setItem('panier', JSON.stringify(panier));
+        afficherContenuPanier(panier);
+        // Ouvrir le panier
+        cartDrawer.style.right = '0';
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Désactiver le défilement
     }
 
-    // Met à jour le panier dans le stockage local
-    localStorage.setItem('panier', JSON.stringify(panier));
-     
-    // Affiche un message pour confirmer l'ajout au panier
-     console.log('Produit(s) ajouté(s) au panier :', panier);
-     
-    localStorage.setItem('panier', JSON.stringify(panier));
-    afficherContenuPanier(panier);
-      // Ouvrir le panier
-      cartDrawer.style.right = '0';
-      overlay.style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Désactiver le défilement
-}
     function afficherContenuPanier(panier) {
-    var cartAjouter = document.getElementById('cartAjouter');
-    if (!cartAjouter) {
-        console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
-        return;
+        var cartAjouter = document.getElementById('cartAjouter');
+        if (!cartAjouter) {
+            console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
+            return;
+        }
+
+        var contenuHTML = '<ul>';
+        for (var i = 0; i < panier.length; i++) {
+            contenuHTML += '<li>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
+                           '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></li>';
+        }
+        contenuHTML += '</ul>';
+        cartAjouter.innerHTML = contenuHTML;
     }
 
-    // Crée le contenu HTML représentant les produits dans le panier
-    var contenuHTML = '<ul>';
-    for (var i = 0; i < panier.length; i++) {
-        contenuHTML += '<li>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite + '</li>';
+    function supprimerProduit(index) {
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        if (index >= 0 && index < panier.length) {
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherContenuPanier(panier);
+        }
     }
-    contenuHTML += '</ul>';
-
-    // Met à jour le contenu de l'élément cartAjouter
-    cartAjouter.innerHTML = contenuHTML;
-}
 
   </script>
 

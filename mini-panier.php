@@ -97,6 +97,50 @@ const closeButtonBottom = document.getElementById('closeButtonBottom'); // New c
 cartButton.addEventListener('click', () => {
   if (cartDrawer.style.right === '' || cartDrawer.style.right === '-300px') {
     // Ouvrir le panier
+    let panier = JSON.parse(localStorage.getItem('panier')) || [];
+    function ajoutPanier(panier) {
+        var quantitySelector = document.getElementById('quantity-selector'+event.target.id);
+        var selectedQuantity = parseInt(quantitySelector.value);
+        const produitExistant = panier.find(produit => produit.id === event.target.id);
+        if (produitExistant) {
+            produitExistant.quantite += selectedQuantity;
+        } else {
+            panier.push({ id: event.target.id, quantite: selectedQuantity });
+        }
+        localStorage.setItem('panier', JSON.stringify(panier));
+        afficherContenuPanier(panier);
+        // Ouvrir le panier
+        cartDrawer.style.right = '0';
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Désactiver le défilement
+    }
+
+    function afficherContenuPanier(panier) {
+        var cartAjouter = document.getElementById('cartAjouter');
+        if (!cartAjouter) {
+            console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
+            return;
+        }
+        var contenuHTML = '<ul>';
+        for (var i = 0; i < panier.length; i++) {
+            contenuHTML += '<li>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
+                           '<button onclick="supprimerProduit('+ i +')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></li>';
+        }
+        contenuHTML += '</ul>';
+        cartAjouter.innerHTML = contenuHTML;
+    }
+
+    function supprimerProduit(index) {
+    let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        if (index >= 0 && index < panier.length) {
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherContenuPanier(panier);
+        }
+    }
+   
+    localStorage.setItem('panier', JSON.stringify(panier));
+    afficherContenuPanier(panier);
     cartDrawer.style.right = '0';
     overlay.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Désactiver le défilement
