@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 include "database.php";
 $query = "SELECT * FROM provinces";
 $result = mysqli_query($conn,$query);
@@ -63,8 +63,7 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           <?php
                 if(isset($_SESSION['nom'])){
           ?>
-              <li class="dropdown" style=""><a href="#"><i style="font-size:20px;color:white;margin-right:60px;
-" class="bi bi-person"></i></a>
+              <li class="dropdown" style=""><a href="#"><i style="font-size:20px;color:white;margin-right:60px;" class="bi bi-person"></i></a>
                   <ul>
                       <li class="dropdown">
                         <a href="#" disable ><i class="bi bi-person-circle" style="font-size:30px"></i></a>
@@ -73,7 +72,7 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
                         <a><?php echo($_SESSION['nom']) ?> </a>
                       </li>
                       <li class="dropdown">
-                        <a href="#">Forum</a>
+                        <a href="forum.php">Forum</a>
                       </li>
                       <li class="dropdown">
 

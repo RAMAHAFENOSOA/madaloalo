@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 22 août 2023 à 01:05
+-- Généré le : jeu. 24 août 2023 à 08:34
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -105,6 +105,79 @@ INSERT INTO `activite` (`id_activite`, `nom_act`, `image_act`, `description_act`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `commentaire`
+--
+
+CREATE TABLE `commentaire` (
+  `id_coms` int(11) NOT NULL,
+  `nom_personne` varchar(30) NOT NULL,
+  `date_coms` datetime NOT NULL,
+  `coms` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `commentaire`
+--
+
+INSERT INTO `commentaire` (`id_coms`, `nom_personne`, `date_coms`, `coms`) VALUES
+(103, 'S', '2023-08-23 11:09:18', 'svav'),
+(104, 'S', '2023-08-23 11:21:28', 'svav'),
+(105, 'Alain', '2023-08-23 11:51:28', 'asvvas'),
+(106, 'rico', '2024-08-23 06:27:42', 'bonjour daholo'),
+(107, 'razafinantoanina', '2024-08-23 06:54:07', 'fffff'),
+(108, 'razafinantoanina', '2024-08-23 06:54:17', 'mimi\r\n'),
+(109, 'razafinantoanina', '2024-08-23 06:54:53', 'hrhrhh?'),
+(110, 'razafinantoanina', '2024-08-23 06:57:58', 'hrhrhh?'),
+(111, 'razafinantoanina', '2024-08-23 06:58:03', 'dbsdbs'),
+(112, 'razafinantoanina', '2024-08-23 06:58:19', 'eweeeeeg'),
+(113, 'razafinantoanina', '2024-08-23 07:01:58', 'dbsbsdsdsdbdbsdbsdbsdbsdbdbsdbdsdbdbdbsdd'),
+(114, 'razafinantoanina', '2024-08-23 07:02:11', 'dbsbsdsdsdbdbsdbsdbsdbsdbdbsdbdsdbdbdbsdd'),
+(115, 'razafinantoanina', '2024-08-23 07:02:16', 'sasvsvsvsvvasvsvavsvsav'),
+(116, 'razafinantoanina', '2024-08-23 07:04:09', 'rhrerhrhhh\nererer'),
+(117, 'razafinantoanina', '2024-08-23 07:04:22', 'rherehrrhrregrerer\nrehreherr'),
+(118, 'razafinantoanina', '2024-08-23 07:04:31', 'gewgwoihishshishiahsvhasuhushuahvuihushauhvuihsauhviusavh'),
+(119, 'razafinantoanina', '2024-08-23 07:06:46', 'g,h,g,ghg\r\nfdfdf'),
+(120, 'razafinantoanina', '2024-08-23 07:07:01', 'dbsdsdb\r\nvssva'),
+(121, 'razafinantoanina', '2024-08-23 07:07:11', 'ssvsvv \n\ndsojsjgsjgiji'),
+(122, 'razafinantoanina', '2024-08-23 07:07:28', 'aihsiufhah\n</br>y[]jtyktykty'),
+(123, 'razafinantoanina', '2024-08-23 07:11:03', 'aihsiufhah\n&lt;/br&gt;y[]jtyktykty'),
+(124, 'razafinantoanina', '2024-08-23 07:11:15', 'dbsbdsd\r\nhdrhr'),
+(125, 'razafinantoanina', '2024-08-23 07:13:03', 'fddfnn /n\ndojsopjj'),
+(126, 'razafinantoanina', '2024-08-23 07:13:21', 'dnfdfndfndndd\ndnnndngn ngdndn\ngndngdgndgd\ndjfj'),
+(127, 'razafinantoanina', '2024-08-23 07:14:26', 'xfnsfnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contacte`
+--
+
+CREATE TABLE `contacte` (
+  `id_contacte` int(11) NOT NULL,
+  `nom_personne` varchar(30) NOT NULL,
+  `email_p` varchar(100) NOT NULL,
+  `objet` varchar(50) NOT NULL,
+  `mess` text NOT NULL,
+  `date_cont` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `contacte`
+--
+
+INSERT INTO `contacte` (`id_contacte`, `nom_personne`, `email_p`, `objet`, `mess`, `date_cont`) VALUES
+(1, 'ain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:16:30'),
+(2, 'ain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:17:01'),
+(3, 'ain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:19:27'),
+(4, 'ain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:19:55'),
+(5, 'ain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:21:14'),
+(6, 'Alain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:21:38'),
+(7, 'Alain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:22:31'),
+(8, 'Alain', 'utako1235@gmail.com', 'gg', '', '2024-08-23 12:23:06');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `hotel`
 --
 
@@ -201,7 +274,11 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `email`, `mot_de_passe`) 
 (33, 'Corinah', 'test@gmail.com', '12'),
 (34, 'Corinah', 'test@gmail.com', '2'),
 (35, 'RAZA', 'test@gmail.com', '1230'),
-(36, 'sam', 'samrkt@gmail.com', '1');
+(36, 'sam', 'samrkt@gmail.com', '1'),
+(37, 'Alain', 'vv@gmail.com', '22'),
+(38, 'S', 'vv@gmail.com', '22'),
+(39, 'rico', 'rico@gmail.com', 'rico'),
+(40, 'razafinantoanina', 'razasambatra@gmail.c', 'kanto');
 
 -- --------------------------------------------------------
 
@@ -309,6 +386,18 @@ ALTER TABLE `activite`
   ADD PRIMARY KEY (`id_activite`);
 
 --
+-- Index pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD PRIMARY KEY (`id_coms`);
+
+--
+-- Index pour la table `contacte`
+--
+ALTER TABLE `contacte`
+  ADD PRIMARY KEY (`id_contacte`);
+
+--
 -- Index pour la table `hotel`
 --
 ALTER TABLE `hotel`
@@ -361,6 +450,18 @@ ALTER TABLE `activite`
   MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+-- AUTO_INCREMENT pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  MODIFY `id_coms` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+
+--
+-- AUTO_INCREMENT pour la table `contacte`
+--
+ALTER TABLE `contacte`
+  MODIFY `id_contacte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT pour la table `hotel`
 --
 ALTER TABLE `hotel`
@@ -376,7 +477,7 @@ ALTER TABLE `panier`
 -- AUTO_INCREMENT pour la table `personne`
 --
 ALTER TABLE `personne`
-  MODIFY `id_personne` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_personne` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT pour la table `provinces`

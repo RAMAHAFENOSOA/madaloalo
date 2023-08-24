@@ -28,8 +28,9 @@
 </head>
 
 <body>
-<?php include "header.php";
-include "database.php";
+<?php
+    include "header.php";
+    include "database.php";
 if(isset($_POST['signup'])) 
 {
         $user = $_POST['name'];
@@ -39,17 +40,16 @@ if(isset($_POST['signup']))
         // SQL query to insert user data into the personne table
         $query= "INSERT INTO personne(nom_personne, email,mot_de_passe) VALUES('{$user}','{$email}','{$pass}')";
         $add_user = mysqli_query($conn,$query);
-
-        
+    
         // displaying proper message for the user to see whether the query executed perfectly or not 
         if (!$add_user) {
             echo "something went wrong ". mysqli_error($conn);
         }else{
             $_SESSION['nom']=$user;
         }
-} 
+}
+ ?>
 
-?>
     
         <!-- Sign up form -->
         <section class="signup">

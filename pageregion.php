@@ -32,7 +32,7 @@
     <?php include "header.php" ?>
     <div id="main">
           <form method="post" action="nouvelle_page.php">
-          <input type="submit" name="btnRegion" value="Afficher la page de la région">
+            <input type="submit" name="btnRegion" value="Afficher la page de la région">
           </form>
     </div>
    

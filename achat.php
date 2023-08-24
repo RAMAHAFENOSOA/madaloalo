@@ -82,7 +82,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
-                  <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen"></i></a>
+                  <a href="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($achat['prix_objet'])?>"><i class="bx bx-fullscreen" style="position:absolute; left:45
+                  %;  "></i></a>
                 </div> 
               </div>
             </div>
@@ -93,7 +94,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"></i></button>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -121,7 +123,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"></i></button>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -147,9 +150,10 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
               <div class="quantity-selector">
                   <input type="hidden" name="id_article" value="<?php echo($achat['id_achat'])?>">
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
-                  <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
+                  <input name="quantite" class="quantity-selector-input" id="quantity-selector <?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"></i></button>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -194,13 +198,65 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
     function decrementQuantity() {
       // console.log('l article numero '+event.target.id+' a ete cliquee');
-      var quantity = document.getElementById('quantity-selector'+event.target.id);
-      var currentQuantity = parseInt(quantity.value);
+      var quantity = document.getElementById('quantity-selector'+event.target.id);  // Sélectionne l'élément HTML avec l'ID 'quantity'
+      var currentQuantity = parseInt(quantity.value); // Récupère la valeur actuelle de la quantité en tant que nombre
       if (currentQuantity >= 1) {
         quantity.value = currentQuantity - 1;
       }
     }
+
+    function ajoutPanier() {
+        var quantitySelector = document.getElementById('quantity-selector'+event.target.id);
+        var selectedQuantity = parseInt(quantitySelector.value);
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        const produitExistant = panier.find(produit => produit.id === event.target.id);
+        if (produitExistant) {
+    if (produitExistant.quantite >= selectedQuantity) {
+        produitExistant.quantite -= selectedQuantity;
+    } else {
+        // Gérer le cas où la quantité demandée est supérieure à la quantité en stock
+        console.log("La quantité demandée est supérieure à la quantité en stock !");
+    }
+} else {
+    // Le produit n'existe pas dans le panier, donc on l'ajoute
+    panier.push({ id: event.target.id, quantite: selectedQuantity });
+}
+
+        localStorage.setItem('panier', JSON.stringify(panier));
+        afficherContenuPanier(panier);
+        // Ouvrir le panier
+        cartDrawer.style.right = '0';
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Désactiver le défilement
+    }
+
+    function afficherContenuPanier(panier) {
+        var cartAjouter = document.getElementById('cartAjouter');
+        if (!cartAjouter) {
+            console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
+            return;
+        }
+
+        var contenuHTML = '<ul style="list-style: none;">';
+        for (var i = 0; i < panier.length; i++) {
+            contenuHTML += '<li class="dropdown"><a>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
+                           '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></a></li>';
+        }
+        contenuHTML += '</ul>';
+        cartAjouter.innerHTML = contenuHTML;
+    }
+
+    function supprimerProduit(index) {
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        if (index >= 0 && index < panier.length) {
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherContenuPanier(panier);
+        }
+    }
+
   </script>
+
 </body>
 
 </html>

@@ -214,7 +214,7 @@ if ($resultHotel->num_rows > 0) {
     // Value exists in the table column, continue with your logic
     // ...
 } else {
-  $query = "SELECT * FROM restaurant WHERE nom_resto LIKE '%$valeurNomReservation%'";
+  $query = "SELECT * FROM activete WHERE nom_act LIKE '%$valeurNomReservation%'";
   $resultHotel = mysqli_query($conn, $query);
   $hotels = mysqli_fetch_all($resultHotel, MYSQLI_ASSOC);
 }
@@ -227,12 +227,12 @@ if ($resultHotel->num_rows > 0) {
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2><?php echo isset($hotels[0]['nom_hotel']) ? $hotels[0]['nom_hotel'] : $hotels[0]['nom_resto'];?></h2>
+          <h2><?php echo isset($hotels[0]['nom_hotel']) ? $hotels[0]['nom_hotel'] : $hotels[0]['nom_act'];?></h2>
           <ol>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="reservation.php">Réservation</a></li>
-            <li><?php echo isset($hotels[0]['nom_hotel']) ? $hotels[0]['nom_hotel'] : $hotels[0]['nom_resto'];?></li>
-          </ol
+            <li><?php echo isset($hotels[0]['nom_hotel']) ? $hotels[0]['nom_hotel'] : $hotels[0]['nom_act'];?></li>
+          </ol>
         </div>
 
       </div>
@@ -283,7 +283,6 @@ if ($resultHotel->num_rows > 0) {
                 </div>
                 <div class="booking-form">
                         <form>
-                         
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Enter votre nom ">
                                 </div>

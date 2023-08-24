@@ -9,8 +9,8 @@ a {
   text-decoration: none;
 }
 
-a .deconnexion{
-  color: #cc4117!important;
+a .deconnexion {
+  color: #cc4117 !important;
 }
 
 a:hover {
@@ -70,7 +70,7 @@ h6,
 }
 
 #header .header-container {
-  padding: 0% 5% 0% 0!important;
+  padding: 0% 5% 0% 0 !important;
 }
 
 #header.header-transparent {
@@ -81,6 +81,7 @@ h6,
   background: rgba(30, 67, 86, 0.8);
   height: 60px;
 }
+
 #header .logo {
   left: 0%;
   position: relative;
@@ -1789,6 +1790,7 @@ section {
   padding-right: 6px;
   color: #6c757d;
   content: ",";
+
 }
 
 .blog .entry .entry-footer .share {
@@ -2304,7 +2306,7 @@ section {
   max-width: 60px;
 }
 
-#footer  .copyright-container .sub-container-copyright div {
+#footer .copyright-container .sub-container-copyright div {
   flex: 1;
   text-align: center;
 }
@@ -2321,8 +2323,8 @@ section {
 }
 
 .product_lower_section {
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .quantity-button {
@@ -2349,5 +2351,3 @@ section {
 .quantity-button-plus:hover {
   background: #4fa6d5;
 }
-
-

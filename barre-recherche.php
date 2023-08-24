@@ -81,21 +81,17 @@
 
 <div id="searchOverlay">
 
-  <section id="slide-down-section" style="width: 100%;height: 20%; ">
-    <div class="search-section-header">
-        
-        <form class="search-form" method="GET" action="afficherRecherche.php" >
-            <input type="text" class="search-input" name="s" placeholder="Recherche..." autocomplete="off" style="background: #fff;width: 50%;height: 50px;border: 2px solid #68A4C4;outline: none;padding: 0 25px;border-radius: 25px 0 0 25px;">
-            <input type="submit" class="search-button"  name="envoyer" value="Recherche">
-          
-        </form>
-        <button type="button" class="close-button" id="close-button" aria-label="Fermer" style="font-size:20px; height: 30px;">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>      
-  </section>
+<section id="slide-down-section">
+<div class="search-section-header">
+    <!-- <h5 style="text-align: center;">Recherche</h5> -->
+    <form class="search-form">
+        <input type="text" class="search-input" placeholder="Ecrivez votre recherche...">
+        <button type="submit" class="search-button">Recherche</button>
+    </form>
+    <button type="button" class="close-button" id="close-button" aria-label="Fermer" style="font-size:20px;">
+    <span aria-hidden="true">&times;</span>
+    </button>
 </div>
-  
 </section>
 <script>
   const searchButton = document.getElementById('search-button');
