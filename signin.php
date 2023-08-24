@@ -34,19 +34,13 @@
 
 <body>
 <?php 
-<<<<<<< HEAD
 include "header.php";
-=======
     include "header.php";
->>>>>>> 7f4da41b0e0dd1c440d2036339fe09689723592c
+
 include "database.php";
 if(isset($_POST['signin'])) 
 {
     // Get the username and password from the form
-<<<<<<< HEAD
-    $username = $_POST['name'];
-    $password = $_POST['pass'];
-=======
     $username = $_POST['your_name'];
     $password = $_POST['your_pass'];
 
