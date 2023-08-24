@@ -73,7 +73,7 @@
         <h5 style="text-align: center;">Panier</h5>
       </div>
     </div>
-    <div style="overflow-y:scroll;width:100%;height:80%">
+    <div id="cartAjouter" style="overflow-y:scroll;width:100%;height:80%">
         
     </div>
     <div class="closeButtonBottom">
