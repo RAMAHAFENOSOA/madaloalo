@@ -62,7 +62,7 @@
 
                     <li>
                         <a href="contact.php" class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-chat-left-text-fill"></i> <span class="ms-1 d-none d-sm-inline text-white">Contacte</span> </a>
+                            <i class="bi bi-chat-left-text-fill"></i> <span class="ms-1 d-none d-sm-inline text-white">Contact</span> </a>
                     </li>
                 </ul>
                 <hr>
@@ -144,13 +144,11 @@
                                 <p><?php echo $comment['coms'];?></p>
                             <!-- fin du commentaire -->
                             <div class="pad-ver">
-                            <form method="post">
                                 <div class="btn-group">
                                   <a class="btn btn-sm btn-default btn-hover-success" href="#" style="color:#178ca4"><i class="fa fa-thumbs-up"></i></a>
                                   <a class="btn btn-sm btn-default btn-hover-danger" href="#" style="color:red"><i class="fa fa-thumbs-down"></i></a>
                                 </div>
-                                <button style="background-color:white;border:none" name="rep" value="rhsdihsp" type="submit" class="btn btn-sm btn-default btn-hover-primary"><i class="bi bi-reply"></i> Repondre</a></button>
-                            </form>
+                                <button style="background-color:white;border:none" name="rep" value="rhsdihsp" class="btn btn-sm btn-default btn-hover-primary"><i class="bi bi-reply"></i> Repondre</a></button>
                                 </div>
                             <hr>
                           </div>

@@ -52,7 +52,12 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
             <li>Achat</li>
           </ol>
         </div>
-
+        <h1>222
+        <?php
+            $variable_php = '<script type="text/javascript">document.write(currentQuantity);</script>';
+            echo $variable_php;
+          ?>
+        </h1>
       </div>
     </section><!-- End Our Achat Section -->
 
@@ -255,6 +260,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
     }
 
   </script>
+
 
 </body>
 

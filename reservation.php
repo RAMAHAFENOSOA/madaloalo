@@ -1,17 +1,4 @@
-<?php
 
-include "database.php";
-$query = "SELECT * FROM hotel";
-$resultHotels = mysqli_query($conn,$query);
-$hotels = mysqli_fetch_all($resultHotels, MYSQLI_ASSOC);
-$query = "SELECT * FROM restaurant";
-$resultRestaurant = mysqli_query($conn,$query);
-$restaurants = mysqli_fetch_all($resultRestaurant, MYSQLI_ASSOC);
-$query = "SELECT * FROM activite";
-$resultActivites = mysqli_query($conn,$query);
-$activites = mysqli_fetch_all($resultActivites, MYSQLI_ASSOC);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +31,19 @@ $activites = mysqli_fetch_all($resultActivites, MYSQLI_ASSOC);
 </head>
 
 <body>
-<?php include "header.php" ?>
+<?php 
+  include "header.php";
+  include "database.php";
+  $query = "SELECT * FROM hotel";
+  $resultHotels = mysqli_query($conn,$query);
+  $hotels = mysqli_fetch_all($resultHotels, MYSQLI_ASSOC);
+  $query = "SELECT * FROM restaurant";
+  $resultRestaurant = mysqli_query($conn,$query);
+  $restaurants = mysqli_fetch_all($resultRestaurant, MYSQLI_ASSOC);
+  $query = "SELECT * FROM activite";
+  $resultActivites = mysqli_query($conn,$query);
+  $activites = mysqli_fetch_all($resultActivites, MYSQLI_ASSOC);
+ ?>
 
   <main id="main">
 
