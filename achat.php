@@ -232,8 +232,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
         var contenuHTML = '<ul>';
         for (var i = 0; i < panier.length; i++) {
-            contenuHTML += '<li>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
-                           '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></li>';
+            contenuHTML += '<li class="dropdown"><a>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
+                           '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></a></li>';
         }
         contenuHTML += '</ul>';
         cartAjouter.innerHTML = contenuHTML;
