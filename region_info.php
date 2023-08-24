@@ -49,10 +49,17 @@ $region = mysqli_fetch_assoc($result);
 
     <!-- ======= About Us Section ======= -->
     <section class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2><?php echo($valeurNomRegion) ?></h2>
+      <div class="container" >
+      <img src="assets/img/img_region/<?php echo($region['image_region']) ?>" class="img-fluid" alt="" style="width:100%;padding:0">
+        <div class="d-flex justify-content-between align-items-center ">
+        
+          <div style="margin-left:30px; display:flex; align-items:center;">
+              <h2 style="margin-right:30px; "><?php echo($valeurNomRegion) ?></h2>
+              <a href="" style="margin-right:30px;">Hôtels</a>
+              <a href="" style="margin-right:30px;">Restaurants</a>
+              <a href="" style="margin-right:30px;">Divertissements</a>
+          </div>
+          
           <ol>
             <li><a href="index.php">Accueil</a></li>
             <li>Régions</li>
@@ -63,25 +70,26 @@ $region = mysqli_fetch_assoc($result);
     </section><!-- End About Us Section -->
     <!-- ======= About Section ======= -->
     
-    <section class="about" data-aos="fade-up">
-      <div class="container">
+    <!-- <section class="about" data-aos="fade-up" style="width:100%">
+      <div class="container" style="width:100%">
 
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="assets/img/img_region/<?php echo($region['image_region']) ?>" class="img-fluid" alt="">
+        <div class="row" style="width:100%">
+          <div class="col-lg-6" style="width:100%">
+            <img src="assets/img/img_region/<?php echo($region['image_region']) ?>" class="img-fluid" alt="" style="width:100%">
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
+          <!-- <div class="col-lg-6 pt-4 pt-lg-0">
             <h3 style="text-align: start;"><?php echo($region['descriptions']) ?></h3>
             <ul>
               <li><i class="bi bi-check2-circle"></i> <?php echo($region['description1']) ?></li>
               <li><i class="bi bi-check2-circle"></i> <?php echo($region['description2']) ?></li>
               <li><i class="bi bi-check2-circle"></i> <?php echo($region['description3']) ?></li>
             </ul>
-          </div>
+          </div> -->
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>-->
+    <!-- End About Section -->
   <iframe src="<?php echo($region['maps']) ?>" ></iframe>
 
 

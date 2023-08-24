@@ -73,7 +73,7 @@
         <h5 style="text-align: center;">Panier</h5>
       </div>
     </div>
-    <div style="overflow-y:scroll;width:100%;height:80%">
+    <div id="cartAjouter" style="overflow-y:scroll;width:100%;height:80%">
         
     </div>
     <div class="closeButtonBottom">
@@ -97,6 +97,34 @@ const closeButtonBottom = document.getElementById('closeButtonBottom'); // New c
 cartButton.addEventListener('click', () => {
   if (cartDrawer.style.right === '' || cartDrawer.style.right === '-300px') {
     // Ouvrir le panier
+    let panier = JSON.parse(localStorage.getItem('panier')) || [];
+
+    function afficherContenuPanier(panier) {
+        var cartAjouter = document.getElementById('cartAjouter');
+        if (!cartAjouter) {
+            console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
+            return;
+        }
+        var contenuHTML = '<ul style="list-style: none;">';
+        for (var i = 0; i < panier.length; i++) {
+          contenuHTML += '<li class="dropdown"><a>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
+                         '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></a></li>';
+        }
+        contenuHTML += '</ul>';
+        cartAjouter.innerHTML = contenuHTML;
+    }
+
+    function supprimerProduit(index) {
+    let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        if (index >= 0 && index < panier.length) {
+            panier.splice(index, 1);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            afficherContenuPanier(panier);
+        }
+    }
+   
+    localStorage.setItem('panier', JSON.stringify(panier));
+    afficherContenuPanier(panier);
     cartDrawer.style.right = '0';
     overlay.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Désactiver le défilement
