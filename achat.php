@@ -228,6 +228,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
      
     // Affiche un message pour confirmer l'ajout au panier
      console.log('Produit(s) ajouté(s) au panier :', panier);
+     localStorage.setItem('panier', JSON.stringify(panier));
+     afficherContenuPanier(panier);
       // Ouvrir le panier
       cartDrawer.style.right = '0';
       overlay.style.display = 'block';
@@ -249,8 +251,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
     // Met à jour le contenu de l'élément cartAjouter
     cartAjouter.innerHTML = contenuHTML;
-    localStorage.setItem('panier', JSON.stringify(panier));
-    afficherContenuPanier(panier);
+    
+   
 }
 
   </script>
