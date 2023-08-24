@@ -202,6 +202,7 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `email`, `mot_de_passe`) 
 (34, 'Corinah', 'test@gmail.com', '2'),
 (35, 'RAZA', 'test@gmail.com', '1230'),
 (36, 'sam', 'samrkt@gmail.com', '1');
+(37, 'sa', 'samrkt@gmail.com', '8');
 
 -- --------------------------------------------------------
 

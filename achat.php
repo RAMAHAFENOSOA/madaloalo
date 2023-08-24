@@ -52,7 +52,12 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
             <li>Achat</li>
           </ol>
         </div>
-
+        <h1>222
+        <?php
+            $variable_php = '<script type="text/javascript">document.write(currentQuantity);</script>';
+            echo $variable_php;
+          ?>
+        </h1>
       </div>
     </section><!-- End Our Achat Section -->
 
@@ -94,7 +99,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                 <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -122,7 +128,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                 <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -150,7 +157,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector <?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button>
               </div>
             </div>
           </form>
@@ -205,7 +213,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
     function ajoutPanier() {
       console.log(event.target.id);
       var quantity = document.getElementById('quantity-selector'+event.target.id);  // Sélectionne l'élément HTML avec l'ID 'quantity'
-      var currentQuantity = parseInt(quantity.value); // Récupère la valeur actuelle de la quantité en tant que nombre
+      var currentQuantity = parseInt(quantity.value);
+       // Récupère la valeur actuelle de la quantité en tant que nombre
       console.log(currentQuantity );
       console.log('testpush')
     
@@ -214,6 +223,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
     }
   </script>
+
 
 </body>
 

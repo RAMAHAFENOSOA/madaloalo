@@ -203,21 +203,46 @@
 </head>
 <body> 
 <?php 
-include ('traitementreservation.php'); 
 include "header.php";
-
+include ('traitementreservation.php'); 
 $query = "SELECT * FROM hotel WHERE nom_hotel LIKE '%$valeurNomReservation%'";
 $resultHotel = mysqli_query($conn, $query);
 $hotels = mysqli_fetch_all($resultHotel, MYSQLI_ASSOC);
+    $query = "SELECT * FROM restaurant WHERE nom_resto LIKE '%$valeurNomReservation%'";
+    $resultRestaurant = mysqli_query($conn, $query);
+    $restos = mysqli_fetch_all($resultRestaurant, MYSQLI_ASSOC);
+    $query2 = "SELECT * FROM activite WHERE nom_act LIKE '%$valeurNomReservation%'";
+    $resultActivite = mysqli_query($conn, $query2);
+    $activites = mysqli_fetch_all($resultActivite, MYSQLI_ASSOC);
+    $query3 = "SELECT * FROM hotel WHERE nom_hotel LIKE '%$valeurNomReservation%'";
+    $resultHotel = mysqli_query($conn, $query3);
+    $hotels = mysqli_fetch_all($resultHotel, MYSQLI_ASSOC);
+    
+    if(!empty($restos) && $restos[0]['nom_resto'] === $valeurNomReservation){
+      $nom =$restos[0]['nom_resto'];
+      $image=$restos[0]['image_resto'];
+      $descr=$restos[0]['description_resto'];
+      $region=$restos[0]['region'];
+      $lieu = $restos[0]['lieu_resto'];
+      $dossier='img_resto';
+    }
+    if(!empty($activites) && $activites[0]['nom_act'] === $valeurNomReservation){
+      $nom =$activites[0]['nom_act'];
+      $image=$activites[0]['image_act'];
+      $descr=$activites[0]['description_act'];
+      $region=$activites[0]['region'];
+      $lieu =$activites[0]['lieu_localisation'];
+      $dossier='img_activite';
+    }
+    if(!empty($hotels) && $hotels[0]['nom_hotel'] === $valeurNomReservation){
+      $nom =$hotels[0]['nom_hotel'];
+      $image=$hotels[0]['image_hotel'];
+      $descr=$hotels[0]['description_hotel'];
+      $region = $hotels[0]['region'];
+      $lieu =$hotels[0]['adress_lieu'];
+      $dossier='img_hotel';
+    }
 
-if ($resultHotel->num_rows > 0) {
-    // Value exists in the table column, continue with your logic
-    // ...
-} else {
-  $query = "SELECT * FROM activete WHERE nom_act LIKE '%$valeurNomReservation%'";
-  $resultHotel = mysqli_query($conn, $query);
-  $hotels = mysqli_fetch_all($resultHotel, MYSQLI_ASSOC);
-}
 ?>
 
   <main id="main">
@@ -227,11 +252,11 @@ if ($resultHotel->num_rows > 0) {
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2><?php echo isset($hotels[0]['nom_hotel']) ? $hotels[0]['nom_hotel'] : $hotels[0]['nom_act'];?></h2>
+          <h2><?php echo $nom;?></h2>
           <ol>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="reservation.php">Réservation</a></li>
-            <li><?php echo isset($hotels[0]['nom_hotel']) ? $hotels[0]['nom_hotel'] : $hotels[0]['nom_act'];?></li>
+            <li><?php echo $nom; ?></li>
           </ol>
         </div>
 
@@ -249,7 +274,7 @@ if ($resultHotel->num_rows > 0) {
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/<?php echo isset($hotels[0]['image_hotel']) ? 'img_hotel' : 'img_resto';?>/<?php echo isset($hotels[0]['image_hotel']) ? $hotels[0]['image_hotel'] : $hotels[0]['image_resto'];?>" alt="">
+                  <img src="assets/img/<?php echo $dossier;?>/<?php echo $image;?>" alt="">
                 </div>
 
               </div>
@@ -261,14 +286,15 @@ if ($resultHotel->num_rows > 0) {
             <div class="portfolio-info">
               <h3>Plus d'information</h3>
               <ul>
-                <li><strong>Région</strong>: <?php echo isset($hotels[0]['region']) ? $hotels[0]['region'] : $hotels[0]['region'];?></li>
-                <li><strong>Adresse</strong>: <?php echo isset($hotels[0]['adress_lieu']) ? $hotels[0]['adress_lieu'] : $hotels[0]['lieu_resto'];?></li>
+                <li><strong>Région</strong>: <?php echo $region; ?></li>
+                <li><strong>Adresse</strong>: <?php echo $lieu; ?></li>
+
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Déscription</h2>
               <p>
-              <?php echo isset($hotels[0]['description_hotel']) ? $hotels[0]['description_hotel'] : $hotels[0]['description_resto'];?>
+              <?php echo $descr; ?>
               </p>
               <button type="button" class="btn btn-info" onclick="openModal()">Réserver</button>
 
