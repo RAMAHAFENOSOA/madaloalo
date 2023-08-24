@@ -230,7 +230,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
             return;
         }
 
-        var contenuHTML = '<ul>';
+        var contenuHTML = '<ul style="list-style: none;">';
         for (var i = 0; i < panier.length; i++) {
             contenuHTML += '<li class="dropdown"><a>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
                            '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></a></li>';
