@@ -33,40 +33,17 @@
   }
 
   .search-section-header {
-    text-align: center;
-    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 12px;
   }
 
-  input{
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    box-sizing: border-box;
-    transition: .5s;
-  }
-  form{
-    width: 75%;
-    height:50%;
-  }
-
   .search-button {
-    border-radius: 0px 25px 25px 0px;
-    position: relative;
-    left: -5px;
-    height: 50px;
-    width: 150px;
     background: #68A4C4;
     border: 0;
     padding: 3px 23px;
     color: #fff;
-  }
-
-  .search-button:hover{
-    background: #1e4356;
   }
 
   @keyframes slideDown {
@@ -79,7 +56,7 @@
   }
 </style>
 
-<div id="searchOverlay">
+<div id="searchOverlay"></div>
 
 <section id="slide-down-section">
 <div class="search-section-header">
