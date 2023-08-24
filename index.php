@@ -12,6 +12,7 @@
 
   <!-- Favicons -->
   <link href="assets/img/madaloalo-high-resolution-color-logo.png" rel="icon">
+  
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -27,6 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/slidestyle.css" rel="stylesheet">
 
 </head>
 
@@ -36,36 +38,96 @@
 include "header.php" 
 ?>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex justify-cntent-center align-items-center">
-    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Tongasoa eto Madagascar</h2>
-          <p class="animate__animated animate__fadeInUp">Madagascar (Madagasikara)
- est une île immense et un pays situé au large de la côte sud-est de l'Afrique. Il abrite des milliers d'espèces animales endémiques comme les lémuriens, ainsi que des forêts tropicales, des plages et des récifs. À proximité de l'effervescente capitale, Antananarivo, se trouve la colline d'Ambohimanga, un ensemble de palais royaux et de cimetières, ainsi que l'Avenue des Baobabs, une route de terre bordée d'arbres géants vieux de plusieurs siècles.</p>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">La Grande île de l'Ocean Indien</h2>
-          <p class="animate__animated animate__fadeInUp">Vous serez le bienvenue où vous soyez. Vous aurez probablement la chance d'être invité ou de partager des moments incroyables avec les habitants</p>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-      </a>
-    </div>
-  </section><!-- End Hero -->
+ 
 
   <main id="main">
+    <!-- SLIDER START -->
+    <div class="slider">
+        <div class="slides" >
+          <!-- radio buttons start -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+          <!-- radio buttons end -->
+
+          <!-- slide img start -->
+              <div class="slide first">
+                  <img src="./images/palmier-plage-entouree-verdure-mer-sous-lumiere-du-soleil-praslin-aux-seychelles.jpg" alt="" >
+                  
+                 
+                      <h2 class="animate__animated animate__fadeInDown" style=" color:#fff; text-align:center; position:relative; bottom:45%">Laissez-vous envoûter par la diversité de Madagascar. </h2>
+                      <p class="animate__animated animate__fadeInUp" style=" color:#fff; text-align:center; position:relative; bottom:45%">Depuis ses magnifiques plages jusqu'à ses sommets montagneux en passant par ses villages pittoresques chargés d'authenticité.</p>
+                      <img src="./images/avion-en-papier (1).png" alt="logo_bagage" style="width: 20%;height:20%;  position:relative; bottom:45%">
+                      
+                
+                </div>
+            
+                <div class="slide ">
+                  
+                  <img src="./images/coucher-soleil-beaute-tranquille-foret-tropicale-humide-generee-par-ia.jpg" alt="" >
+                  
+                  <h2 class="animate__animated animate__fadeInDown" style=" color:#fff; text-align:center; position:relative; bottom:45%">Bienvenue sur notre site dédié au voyage au cœur de Madagascar </h2>
+                  <p class="animate__animated animate__fadeInUp" style=" color:#fff; text-align:center; position:relative; bottom:45%">
+                   Découvrez les trésors cachés et les merveilles inexplorées de Madagascar grâce à nos offres exclusives.
+                  </p>
+                </div>
+                <div class="slide">
+                  <img src="./images/plan-horizontal-vue-plage-mer-serviettes-disposees-sous-arbre-aruba.jpg" alt="" >
+                  <h2 class="animate__animated animate__fadeInDown" style=" color:#fff; text-align:center; position:relative; bottom:45%">Prêt à plonger dans l'aventure ?</h2>
+                  <p class="animate__animated animate__fadeInUp" style=" color:#fff; text-align:center; position:relative; bottom:45%">Explorez Madagascar à travers nos circuits sur mesure, conçus pour vous faire vivre une expérience unique mêlant culture, histoire et paysages à couper le souffle.</p>
+                </div>
+              
+                <div class="slide">
+                  <img src="./images/scene-tranquille-chaine-montagnes-refletee-dans-etang-genere-par-ia.jpg" alt=""  >
+               
+                          <h2 class="animate__animated animate__fadeInDown" style=" color:#fff; text-align:center; position:relative; bottom:45%">Reconnectez-vous avec la nature ,</h2>
+                          <p class="animate__animated animate__fadeInUp" style=" color:#fff; text-align:center; position:relative; bottom:45%">en explorant les parcs nationaux préservés et les réserves naturelles de Madagascar où la faune et la flore vous réservent un spectacle éblouissant.</p>
+                       
+                </div>
+            
+                
+
+          <!-- slide img end -->
+            <!-- autaumatic navigation start -->
+            <div class="navigation-auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+              <div class="auto-btn4"></div>
+
+            </div>
+            <!-- autaumatic navigation end -->
+
+          <!-- manual navigation start -->
+          <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2"  class="manual-btn"></label>
+            <label for="radio3"  class="manual-btn"></label>
+            <label for="radio4"  class="manual-btn"></label>
+
+          </div>
+          <!-- manual navigation end -->
+          
+
+
+        </div>
+        <script type="text/javascript">
+          var counter = 1;
+          setInterval(function() {
+            document.getElementById('radio' + counter ).checked  = true; 
+            counter++;
+            if(counter > 4){
+              counter = 1;
+            }
+          }, 7953); 
+
+        </script>
+      </div>
+      <!-- <div class="curve"></div> -->
+<!-- SLIDER END -->
+
 
     <!-- ======= Services Section ======= -->
     <div class="text">
