@@ -205,7 +205,10 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
     }
 
     function ajoutPanier() {
+        var nom = document.getElementById('article-image--'+event.target.id);
         var quantitySelector = document.getElementById('quantity-selector'+event.target.id);
+        var image = document.getElementById('article-image--'+event.target.id)
+        console.log(image.getAttribute('src'));
         var selectedQuantity = parseInt(quantitySelector.value);
         let panier = JSON.parse(localStorage.getItem('panier')) || [];
         const produitExistant = panier.find(produit => produit.id === event.target.id);
@@ -213,7 +216,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
            produitExistant.quantite += selectedQuantity;
 } else {
     // Le produit n'existe pas dans le panier, donc on l'ajoute
-    panier.push({ id: event.target.id, quantite: selectedQuantity });
+    panier.push({ id: event.target.id, quantite: selectedQuantity, img: image.getAttribute('src') ,titre: nom.getAttribute('nom-produit')});
 }
 
         localStorage.setItem('panier', JSON.stringify(panier));
@@ -235,9 +238,9 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
 
     var contenuHTML = '<ul class="cart-list">';
     for (var i = 0; i < panier.length; i++) {
-        var imageURL = document.getElementById('article-image--' + panier[i].id).getAttribute('src'); // Get image URL for the specific product ID
+        var imageURL = document.getElementById('article-image--'+ panier[i].id).getAttribute('src'); // Get image URL for the specific product ID
         contenuHTML += '<li class="cart-item"><div class="item-left"><img class="item-image" src="' + imageURL + '" alt="Product Image"></div>' +
-                       '<div class="item-right"><div class="item-info">Produit: ' + document.getElementById('article-image--' + panier[i].id).getAttribute('nom-produit') + '</div>' +
+                       '<div class="item-right"><div class="item-info">Produit: ' + document.getElementById('article-image--'+ panier[i].id).getAttribute('nom-produit') + '</div>' +
                        '<div class="item-info">Quantité: ' + panier[i].quantite + '</div>' +
                        '<button onclick="supprimerProduit(' + i + ')" class="remove-button"><i class="bi bi-trash"></i></button></div></li>';
     }
