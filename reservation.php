@@ -1,4 +1,5 @@
 <?php
+
 include "database.php";
 $query = "SELECT * FROM hotel";
 $resultHotels = mysqli_query($conn,$query);
@@ -9,6 +10,7 @@ $restaurants = mysqli_fetch_all($resultRestaurant, MYSQLI_ASSOC);
 $query = "SELECT * FROM activite";
 $resultActivites = mysqli_query($conn,$query);
 $activites = mysqli_fetch_all($resultActivites, MYSQLI_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

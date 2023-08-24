@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 include "database.php";
 $query = "SELECT * FROM provinces";
 $result = mysqli_query($conn,$query);

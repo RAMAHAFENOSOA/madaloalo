@@ -1,3 +1,16 @@
+<?php
+    include "database.php";
+    if(isset($_POST['btn']))
+    {
+        $personne=$_POST['name'];
+        $email=$_POST['email'];
+        $obj=$_POST['subject'];
+        $mess=$_POST['messsage'];
+        $date=date('d-m-y h:i:s');
+        $query= "INSERT INTO contacte(nom_personne,email_p,objet,mess,date_cont) VALUES('{$personne}','{$email}','{$obj}','{$mess}','{$date}')";
+        $add_contacte = mysqli_query($conn,$query);
+    }    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +98,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form  action="contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nom" required>
@@ -100,12 +113,7 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">en cours</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Votre message a été envoyer. Merci!</div>
-              </div>
-              <div class="text-center"><button type="submit">Envoyer Message </button></div>
+              <div class="text-center"><button type="submit" name="btn" value='oui'>Envoyer Message </button></div>
             </form>
           </div>
 

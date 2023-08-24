@@ -28,15 +28,9 @@
 </head>
 
 <body>
-<<<<<<< HEAD
 <?php
     include "header.php";
     include "database.php";
-=======
-<?php include "header.php" ;
-
-include "database.php";
->>>>>>> f5277c6325e3dd6782913a8e3b80460078097b30
 if(isset($_POST['signup'])) 
 {
         $user = $_POST['name'];
@@ -54,11 +48,8 @@ if(isset($_POST['signup']))
             $_SESSION['nom']=$user;
         }
 }
-<<<<<<< HEAD
  ?>
-=======
-?>
->>>>>>> f5277c6325e3dd6782913a8e3b80460078097b30
+
     
         <!-- Sign up form -->
         <section class="signup">
