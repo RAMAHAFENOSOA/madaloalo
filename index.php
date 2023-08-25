@@ -182,7 +182,7 @@ include "header.php"
         <div class="row">
           <div class="col-lg-6 video-box">
           <video width="600px" controls autoplay muted loop>
-            <source src="" type="video/mp4">
+            <source src="assets/video/Madagascar - Parc National Tsingy de Bemaraha  [4K].mp4" type="video/mp4">
           </video>
           </div>
 
