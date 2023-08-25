@@ -224,7 +224,7 @@ include "header.php"
             <div class="row">
               <div class="col-md-12">
                 <div class="info-box">
-                  <i class="bx bx-map"></i>
+                  <img src="assets/img/qrcode.PNG" width="30%" alt="" srcset="">
                   <h3>Adresse</h3>
                   <p>Antananarive, Analamanga, Madagascar</p>
                 </div>
