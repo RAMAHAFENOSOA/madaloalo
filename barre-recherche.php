@@ -34,11 +34,13 @@
 
   .search-section-header {
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     padding: 12px;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
 
   input{
@@ -48,20 +50,16 @@
     box-sizing: border-box;
     transition: .5s;
   }
-  form{
+  
+  .search-form {
     width: 75%;
     height:50%;
   }
 
   .search-button {
-    border-radius: 0px 25px 25px 0px;
     position: relative;
-    left: -5px;
-    height: 50px;
-    width: 150px;
     background: #68A4C4;
     border: 0;
-    padding: 3px 23px;
     color: #fff;
   }
 
@@ -85,12 +83,12 @@
     <div class="search-section-header">
         
         <form class="search-form" method="GET" action="afficherRecherche.php" >
-            <input type="text" class="search-input" name="s" placeholder="Recherche..." autocomplete="off" style="background: #fff;width: 50%;height: 50px;border: 2px solid #68A4C4;outline: none;padding: 0 25px;border-radius: 25px 0 0 25px;">
+            <input type="text" class="search-input" name="s" placeholder="Recherche..." autocomplete="off" style="background: #fff;width: 50%;border: 2px solid #68A4C4;outline: none;padding: 0 25px;">
             <input type="submit" class="search-button"  name="envoyer" value="Recherche">
           
         </form>
         <button type="button" class="close-button" id="close-button" aria-label="Fermer" style="font-size:20px; height: 30px;">
-        <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true"><i class="bi bi-x-circle"></i></span>
         </button>
     </div>      
   </section>

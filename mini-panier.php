@@ -55,6 +55,7 @@
   border: none; /* Pas de bordure */
   top: 10px;
   right: 10px;
+  background:none;
   cursor: pointer;
 }
 
@@ -92,7 +93,7 @@
     <div class="header-wrapper">
       <!-- Bouton de fermeture avec une croix "x" -->
       <button type="button" class="close close-button" id="closeButton" aria-label="Fermer" style="font-size:20px;">
-        <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true"><i class="bi bi-x-circle"></i></span>
       </button>
       <!-- En-tête du panier -->
       <div class="text">
