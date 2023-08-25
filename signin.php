@@ -41,8 +41,8 @@ include "database.php";
 if(isset($_POST['signin'])) 
 {
     // Get the username and password from the form
-    $username = $_POST['your_name'];
-    $password = $_POST['your_pass'];
+    $username = $_POST['name'];
+    $password = $_POST['pass'];
 
     // Prepare and execute the query
     $stmt = mysqli_prepare($conn, "SELECT * FROM personne WHERE nom_personne = ? AND mot_de_passe = ?");
