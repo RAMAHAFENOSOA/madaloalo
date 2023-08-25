@@ -75,7 +75,7 @@ if(isset($_GET['s'])){
 <section class="afficher_utilisateur" style="margin:10%"> 
 
 <?php 
-    ?> <h3 style="color: #1e4356;">>>Achats</h3> <?php
+    ?> <h6 style="color:#41cf2e;font-size:17px;"<i class="bi bi-caret-right"></i>Achats</h6> <?php
   if(mysqli_num_rows($allachats) > 0){
       while ($achat = mysqli_fetch_assoc($allachats)) {
         ?>
@@ -84,10 +84,10 @@ if(isset($_GET['s'])){
       }
   }else{
     ?>
-      <p>Aucun utilistaur trouvé</p>
+      <p>Aucun resultat</p>
     <?php
   }
-    ?> <h3 style="color: #1e4356;">>>Activités</h3> <?php
+    ?> <h6 style="color:#41cf2e;font-size:17px;"<i class="bi bi-caret-right"></i>Activités</h6> <?php
   if(mysqli_num_rows($allactivite) > 0){
     while ($activite = mysqli_fetch_assoc($allactivite)) {
       ?>
@@ -96,10 +96,10 @@ if(isset($_GET['s'])){
     }
 }else{
   ?>
-    <p>Aucun utilistaur trouvé</p>
+    <p>Aucun resultat</p>
   <?php
 }
-?> <h3 style="color: #1e4356;">>>Hôtels</h3> <?php
+?> <h6 style="color:#41cf2e;font-size:17px;"<i class="bi bi-caret-right"></i>Hôtels</h6> <?php
 if(mysqli_num_rows($allhotel) > 0){
     while ($hotel = mysqli_fetch_assoc($allhotel)) {
       ?>
@@ -108,11 +108,11 @@ if(mysqli_num_rows($allhotel) > 0){
     }
 }else{
   ?>
-    <p>Aucun utilistaur trouvé</p>
+    <p>Aucun resultat</p>
   <?php
 }
 
-?> <h3 style="color: #1e4356;">>>Provinces</h3> <?php
+?> <h6 style="color:#41cf2e;font-size:17px;"<i class="bi bi-caret-right"></i>Provinces</h6> <?php
 if(mysqli_num_rows($allhotel) > 0){
     while ($province = mysqli_fetch_assoc($allprovince)) {
       ?>
@@ -121,11 +121,11 @@ if(mysqli_num_rows($allhotel) > 0){
     }
 }else{
   ?>
-    <p>Aucun utilistaur trouvé</p>
+    <p>Aucun resultat</p>
   <?php
 }
 
-?> <h3 style="color: #1e4356;">>>Région</h3> <?php
+?> <h6 style="color:#41cf2e;font-size:17px;"<i class="bi bi-caret-right"></i>Région</h6> <?php
 if(mysqli_num_rows($allregion) > 0){
     while ($region = mysqli_fetch_assoc($allregion)) {
       ?>
@@ -134,11 +134,11 @@ if(mysqli_num_rows($allregion) > 0){
     }
 }else{
   ?>
-    <p>Aucun utilistaur trouvé</p>
+    <p>Aucun resultat</p>
   <?php
 }
 
-?> <h3 style="color: #1e4356;">>>Réstautant</h3> <?php
+?> <h6 style="color:#41cf2e;font-size:17px;"<i class="bi bi-caret-right"></i>Réstautant</h6> <?php
 if(mysqli_num_rows($allrestaurant) > 0){
     while ($resto = mysqli_fetch_assoc($allrestaurant)) {
       ?>
@@ -147,7 +147,7 @@ if(mysqli_num_rows($allrestaurant) > 0){
     }
 }else{
   ?>
-    <p>Aucun utilistaur trouvé</p>
+    <p>Aucun resultat</p>
   <?php
 }
 

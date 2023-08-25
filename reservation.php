@@ -86,10 +86,10 @@
               <div class="portfolio-info">
                 <h3> <?php echo($hotel['nom_hotel'])?></h3>
                 <div style="display: flex;justify-content: center;">
-                  <a href="assets/img/img_hotel/<?php echo($hotel['image_hotel'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($hotel['nom_hotel'])?>"><i class="bx bx-fullscreen"></i></i></a>
                   <form action="reservation-details.php" method="post">
+                    <a href="assets/img/img_hotel/<?php echo($hotel['image_hotel'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($hotel['nom_hotel'])?>"><i class="bx bx-fullscreen"></i></i></a>
                     <div>
-                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation" style="background:none;border:none;" value="<?php echo $test=$hotel['nom_hotel'];?>" ><i class="bx bx-plus" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
+                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation" style="background:none;border:none;" value="<?php echo $test=$hotel['nom_hotel'];?>" ><i class="bi bi-info-circle" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
                     </div>
                   </form>
                 </div>
@@ -105,10 +105,10 @@
               <div class="portfolio-info">
                 <h3><?php echo($restaurant['nom_resto'])?></h3>
                 <div style="display: flex;justify-content: center;">
-                  <a href="assets/img/img_resto/<?php echo($restaurant['image_resto'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($restaurant['nom_resto'])?>"><i class="bx bx-fullscreen"></i></i></a>
                   <form action="reservation-details.php" method="post">
+                    <a href="assets/img/img_resto/<?php echo($restaurant['image_resto'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($restaurant['nom_resto'])?>"><i class="bx bx-fullscreen"></i></i></a>
                     <div>
-                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation"  style="background:none;border:none;" value="<?php echo $test=$restaurant['nom_resto'];?>" ><i class="bx bx-plus" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
+                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation"  style="background:none;border:none;" value="<?php echo $test=$restaurant['nom_resto'];?>" ><i class="bi bi-info-circle" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
                     </div>
                   </form>
                 </div>
@@ -124,10 +124,10 @@
               <div class="portfolio-info">
                 <h3> <?php echo($activite['nom_act'])?></h3>
                 <div style="display: flex;justify-content: center;">
-                  <a href="assets/img/img_activite/<?php echo($activite['image_act'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($activite['nom_act'])?>"><i class="bx bx-fullscreen"></i></i></a>
                   <form action="reservation-details.php" method="post">
+                    <a href="assets/img/img_activite/<?php echo($activite['image_act'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($activite['nom_act'])?>"><i class="bx bx-fullscreen"></i></i></a>
                     <div>
-                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation" style="background:none;border:none;" value="<?php echo $test=$activite['nom_act'];?>" ><i class="bx bx-plus" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
+                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation" style="background:none;border:none;" value="<?php echo $test=$activite['nom_act'];?>" ><i class="bi bi-info-circle" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
                     </div>
                   </form>
                 </div>
