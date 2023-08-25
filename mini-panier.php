@@ -136,9 +136,10 @@ cartButton.addEventListener('click', () => {
 
     var contenuHTML = '<ul class="cart-list">';
     for (var i = 0; i < panier.length; i++) {
-        var imageURL = document.getElementById('article-image--' + panier[i].id).getAttribute('src'); // Get image URL for the specific product ID
-        contenuHTML += '<li class="cart-item"><div class="item-left"><img class="item-image" src="' + imageURL + '" alt="Product Image"></div>' +
-                       '<div class="item-right"><div class="item-info">Produit: ' + document.getElementById('article-image--' + panier[i].id).getAttribute('nom-produit') + '</div>' +
+      console.log(panier);
+        var imageURL =  panier[i].img; // Get image URL for the specific product ID
+        contenuHTML += '<li class="cart-item"><div class="item-left"><img class="item-image" src="' + panier[i].img + '" alt="Product Image"></div>' +
+                       '<div class="item-right"><div class="item-info">Produit: ' + panier[i].titre + '</div>' +
                        '<div class="item-info">Quantité: ' + panier[i].quantite + '</div>' +
                        '<button onclick="supprimerProduit(' + i + ')" class="remove-button"><i class="bi bi-trash"></i></button></div></li>';
     }
