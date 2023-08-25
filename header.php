@@ -83,11 +83,12 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           <?php
                 }
           ?> 
-          
           <!-- <li><a href="https://ispm-edu.com/" target="_blank"><img src="assets/img/logo_ispm.png" style="height:70px;width:70px;" alt="ispm_logo"></a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
+        
+    </div>                   
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->

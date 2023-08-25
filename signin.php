@@ -34,11 +34,19 @@
 
 <body>
 <?php 
+<<<<<<< HEAD
+include "header.php";
+=======
     include "header.php";
+>>>>>>> 7f4da41b0e0dd1c440d2036339fe09689723592c
 include "database.php";
 if(isset($_POST['signin'])) 
 {
     // Get the username and password from the form
+<<<<<<< HEAD
+    $username = $_POST['name'];
+    $password = $_POST['pass'];
+=======
     $username = $_POST['your_name'];
     $password = $_POST['your_pass'];
 
@@ -65,7 +73,31 @@ if(isset($_POST['signin']))
     mysqli_stmt_close($stmt);
 }
  ?>
+>>>>>>> 7f4da41b0e0dd1c440d2036339fe09689723592c
 
+    // Prepare and execute the query
+    $stmt = mysqli_prepare($conn, "SELECT * FROM personne WHERE nom_personne = ? AND mot_de_passe = ?");
+    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+    mysqli_stmt_execute($stmt);
+
+    // Check if a matching user is found
+    $result = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($result) == 1) {
+        // User exists, do something (e.g., redirect to a member area)
+        echo "Connexion réussie! Bonjour, $username!";
+        echo "<script type='text/javascript'>alert('Connexion réussie! Bonjour, $username!')</script>";
+        echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
+        $_SESSION['nom']=$username;
+    } else {
+        // User does not exist or credentials are incorrect
+        echo "Mot de passe ou utilisateur invalide";
+        echo "<script type='text/javascript'>alert('Mot de passe ou utilisateur invalide')</script>";
+    }
+
+    // Close the database connection
+    mysqli_stmt_close($stmt);
+}
+ ?>
         <!-- Sing in  Form -->
         <section class="sign-in">
         <section class="breadcrumbs">
@@ -84,11 +116,11 @@ if(isset($_POST['signin']))
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Votre nom" required/>
+                                <input type="text" name="name" id="your_name" placeholder="Votre nom" required/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Mot de passe" required/>
+                                <input type="password" name="pass" id="your_pass" placeholder="Mot de passe" required/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
