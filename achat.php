@@ -93,8 +93,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
-                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" style="font-size:20px;" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart" style="font-size:20px;" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -122,8 +122,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
-                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" style="font-size:20px;" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart" style="font-size:20px;" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -151,8 +151,8 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <button type="button" class="quantity-button-minus"><i class="bi bi-dash" id="<?php echo($achat['id_achat'])?>" onclick="decrementQuantity()"></i></button>
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
-                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
-                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
+                  <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" style="font-size:20px;"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
+                  <i class="bi bi-cart" style="font-size:20px;" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>

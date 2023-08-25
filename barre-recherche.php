@@ -34,11 +34,13 @@
 
   .search-section-header {
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 12px;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
 
   input{
@@ -48,7 +50,8 @@
     box-sizing: border-box;
     transition: .5s;
   }
-  form{
+  
+  .search-form {
     width: 75%;
     height:50%;
   }
