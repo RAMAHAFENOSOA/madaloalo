@@ -56,13 +56,13 @@
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="index.php" class="nav-link text-white align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none text-white d-sm-inline" >Home</span>
+                            <i class="bi bi-house"></i>&nbsp;&nbsp;<span class="ms-1 d-none text-white d-sm-inline" >Accueil</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="contact.php" class="nav-link px-0 align-middle text-white">
-                            <i class="bi bi-chat-left-text-fill"></i> <span class="ms-1 d-none d-sm-inline text-white">Contact</span> </a>
+                        <i class="bi bi-telephone"></i>&nbsp;&nbsp;<span class="ms-1 d-none d-sm-inline text-white">Contactez-nous</span> </a>
                     </li>
                 </ul>
                 <hr>

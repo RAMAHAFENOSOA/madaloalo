@@ -49,17 +49,10 @@ $region = mysqli_fetch_assoc($result);
 
     <!-- ======= About Us Section ======= -->
     <section class="breadcrumbs">
-      <div class="container" >
-      <img src="assets/img/img_region/<?php echo($region['image_region']) ?>" class="img-fluid" alt="" style="width:100%;padding:0">
-        <div class="d-flex justify-content-between align-items-center ">
-        
-          <div style="margin-left:30px; display:flex; align-items:center;">
-              <h2 style="margin-right:30px; "><?php echo($valeurNomRegion) ?></h2>
-              <a href="" style="margin-right:30px;">Hôtels</a>
-              <a href="" style="margin-right:30px;">Restaurants</a>
-              <a href="" style="margin-right:30px;">Divertissements</a>
-          </div>
-          
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2><?php echo($valeurNomRegion) ?></h2>
           <ol>
             <li><a href="index.php">Accueil</a></li>
             <li>Régions</li>
@@ -70,28 +63,116 @@ $region = mysqli_fetch_assoc($result);
     </section><!-- End About Us Section -->
     <!-- ======= About Section ======= -->
     
-    <!-- <section class="about" data-aos="fade-up" style="width:100%">
-      <div class="container" style="width:100%">
+    <section class="about" data-aos="fade-up">
+      <div class="container">
 
-        <div class="row" style="width:100%">
-          <div class="col-lg-6" style="width:100%">
-            <img src="assets/img/img_region/<?php echo($region['image_region']) ?>" class="img-fluid" alt="" style="width:100%">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="assets/img/img_region/<?php echo($region['image_region']) ?>" class="img-fluid" alt="">
           </div>
-          <!-- <div class="col-lg-6 pt-4 pt-lg-0">
+          <div class="col-lg-6 pt-4 pt-lg-0">
             <h3 style="text-align: start;"><?php echo($region['descriptions']) ?></h3>
             <ul>
               <li><i class="bi bi-check2-circle"></i> <?php echo($region['description1']) ?></li>
               <li><i class="bi bi-check2-circle"></i> <?php echo($region['description2']) ?></li>
               <li><i class="bi bi-check2-circle"></i> <?php echo($region['description3']) ?></li>
             </ul>
-          </div> -->
+          </div>
         </div>
 
       </div>
-    </section>-->
-    <!-- End About Section -->
-  <iframe src="<?php echo($region['maps']) ?>" ></iframe>
+    </section><!-- End About Section -->
+  <!-- <iframe src="<?php echo($region['maps']) ?>" ></iframe> -->
+  <?php 
+  include "database.php";
+  $query = "SELECT * FROM hotel WHERE region LIKE '%$valeurNomRegion%'";
+  $resultHotels = mysqli_query($conn,$query);
+  $hotels = mysqli_fetch_all($resultHotels, MYSQLI_ASSOC);
+  $query = "SELECT * FROM restaurant WHERE region LIKE '%$valeurNomRegion%'";
+  $resultRestaurant = mysqli_query($conn,$query);
+  $restaurants = mysqli_fetch_all($resultRestaurant, MYSQLI_ASSOC);
+  $query = "SELECT * FROM activite WHERE region LIKE '%$valeurNomRegion%'";
+  $resultActivites = mysqli_query($conn,$query);
+  $activites = mysqli_fetch_all($resultActivites, MYSQLI_ASSOC);
+ ?>
+  <section class="portfolio" style="padding:0px;">
+      <div class="container">
 
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">Tous</li>
+              <li data-filter=".filter-hotel">Hotels</li>
+              <li data-filter=".filter-activity">Activités</li>
+              <li data-filter=".filter-restaurant">Restaurant</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+          
+        <?php foreach ($hotels as $hotel): ?>
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-hotel">
+            <div class="portfolio-item">
+              <img src="assets/img/img_hotel/<?php echo($hotel['image_hotel'])?>" class="img-fluid" alt="">    
+}
+              <div class="portfolio-info">
+                <h3> <?php echo($hotel['nom_hotel'])?></h3>
+                <div style="display: flex;justify-content: center;">
+                  <a href="assets/img/img_hotel/<?php echo($hotel['image_hotel'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($hotel['nom_hotel'])?>"><i class="bx bx-fullscreen"></i></i></a>
+                  <form action="reservation-details.php" method="post">
+                    <div>
+                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation" style="background:none;border:none;" value="<?php echo $test=$hotel['nom_hotel'];?>" ><i class="bx bx-plus" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+
+          <?php foreach ($restaurants as $restaurant): ?>
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-restaurant">
+            <div class="portfolio-item">
+            <img src="assets/img/img_resto/<?php echo($restaurant['image_resto'])?>" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3><?php echo($restaurant['nom_resto'])?></h3>
+                <div style="display: flex;justify-content: center;">
+                  <a href="assets/img/img_resto/<?php echo($restaurant['image_resto'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($restaurant['nom_resto'])?>"><i class="bx bx-fullscreen"></i></i></a>
+                  <form action="reservation-details.php" method="post">
+                    <div>
+                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation"  style="background:none;border:none;" value="<?php echo $test=$restaurant['nom_resto'];?>" ><i class="bx bx-plus" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+
+          <?php foreach ($activites as $activite): ?>
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-activity">
+            <div class="portfolio-item">
+              <img src="assets/img/img_activite/<?php echo($activite['image_act'])?>" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3> <?php echo($activite['nom_act'])?></h3>
+                <div style="display: flex;justify-content: center;">
+                  <a href="assets/img/img_activite/<?php echo($activite['image_act'])?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo($activite['nom_act'])?>"><i class="bx bx-fullscreen"></i></i></a>
+                  <form action="reservation-details.php" method="post">
+                    <div>
+                      <button href="reservation-details.php" title="Plus de details" type="submit" name="reservation" style="background:none;border:none;" value="<?php echo $test=$activite['nom_act'];?>" ><i class="bx bx-plus" style="color: rgba(255, 255, 255, 0.6); font-size: 25px;"></i></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
+
+        </div>
+      </div>
+      
+  </section><!-- End Reservation section -->
 
 
   </main><!-- End #main -->

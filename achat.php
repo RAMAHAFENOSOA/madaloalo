@@ -33,7 +33,6 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
 </head>
 
 <body>
@@ -53,10 +52,6 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
           </ol>
         </div>
        
-        <?php
-            $variable_php = '<script type="text/javascript">document.write(currentQuantity);</script>';
-            echo $variable_php;
-          ?>
         </h1>
       </div>
     </section><!-- End Our Achat Section -->
@@ -83,7 +78,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
             <div class="col-lg-4 col-md-6 portfolio-wrap filter-sandale">
             <form action="#" method="post">
             <div class="portfolio-item" id="element--<?php echo($achat['id_achat'])?>">
-              <img src="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
+              <img src="assets/img/kapakapa/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="" id="article-image--<?php echo($achat['id_achat'])?>" nom-produit="<?php echo($achat['nom_objet'])?>">
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
@@ -99,7 +94,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
                   <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
-                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
+                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -112,7 +107,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
             <div class="col-lg-4 col-md-6 portfolio-wrap filter-vase">
             <form action="#" method="post">
             <div class="portfolio-item" id="element--<?php echo($achat['id_achat'])?>">
-              <img src="assets/img/vases/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
+              <img src="assets/img/vases/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="" id="article-image--<?php echo($achat['id_achat'])?>" nom-produit="<?php echo($achat['nom_objet'])?>">
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
@@ -128,7 +123,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
                   <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
-                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
+                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -141,7 +136,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
             <div class="col-lg-4 col-md-6 portfolio-wrap filter-art">
             <form action="#" method="post">
             <div class="portfolio-item" id="element--<?php echo($achat['id_achat'])?>">
-              <img src="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="">
+              <img src="assets/img/hosidoko/<?php echo($achat['image_objet'])?>" class="img-fluid" alt="" id="article-image--<?php echo($achat['id_achat'])?>" nom-produit="<?php echo($achat['nom_objet'])?>">
               <div class="portfolio-info">
                 <h3> <?php echo($achat['nom_objet'])?></h3>
                 <div class="product_lower_section">
@@ -157,7 +152,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
                   <input name="quantite" class="quantity-selector-input" id="quantity-selector<?php echo($achat['id_achat'])?>" value="1">
                   <button type="button" class="quantity-button-plus"><i class="bi bi-plus" id="<?php echo($achat['id_achat'])?>" onclick="incrementQuantity()"></i></button>
                   <!-- <button type="submit" class="icon-button quantity-button"><i class="bi bi-cart"  id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i></button> -->
-                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>" onclick=" ajoutPanier()"></i>
+                  <i class="bi bi-cart" id="<?php echo($achat['id_achat'])?>"  onclick=" ajoutPanier()"></i>
               </div>
             </div>
           </form>
@@ -215,12 +210,7 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
         let panier = JSON.parse(localStorage.getItem('panier')) || [];
         const produitExistant = panier.find(produit => produit.id === event.target.id);
         if (produitExistant) {
-    if (produitExistant.quantite >= selectedQuantity) {
-        produitExistant.quantite -= selectedQuantity;
-    } else {
-        // Gérer le cas où la quantité demandée est supérieure à la quantité en stock
-        console.log("La quantité demandée est supérieure à la quantité en stock !");
-    }
+           produitExistant.quantite += selectedQuantity;
 } else {
     // Le produit n'existe pas dans le panier, donc on l'ajoute
     panier.push({ id: event.target.id, quantite: selectedQuantity });
@@ -233,22 +223,28 @@ $achats = mysqli_fetch_all($resultAchat, MYSQLI_ASSOC);
         overlay.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Désactiver le défilement
     }
+    
+    // Sélectionne l'élément HTML avec l'ID 'quantity'
 
     function afficherContenuPanier(panier) {
-        var cartAjouter = document.getElementById('cartAjouter');
-        if (!cartAjouter) {
-            console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
-            return;
-        }
-
-        var contenuHTML = '<ul style="list-style: none;">';
-        for (var i = 0; i < panier.length; i++) {
-            contenuHTML += '<li class="dropdown"><a>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
-                           '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></a></li>';
-        }
-        contenuHTML += '</ul>';
-        cartAjouter.innerHTML = contenuHTML;
+    var cartAjouter = document.getElementById('cartAjouter');
+    if (!cartAjouter) {
+        console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
+        return;
     }
+
+    var contenuHTML = '<ul class="cart-list">';
+    for (var i = 0; i < panier.length; i++) {
+        var imageURL = document.getElementById('article-image--' + panier[i].id).getAttribute('src'); // Get image URL for the specific product ID
+        contenuHTML += '<li class="cart-item"><div class="item-left"><img class="item-image" src="' + imageURL + '" alt="Product Image"></div>' +
+                       '<div class="item-right"><div class="item-info">Produit: ' + document.getElementById('article-image--' + panier[i].id).getAttribute('nom-produit') + '</div>' +
+                       '<div class="item-info">Quantité: ' + panier[i].quantite + '</div>' +
+                       '<button onclick="supprimerProduit(' + i + ')" class="remove-button"><i class="bi bi-trash"></i></button></div></li>';
+    }
+    contenuHTML += '</ul>';
+    cartAjouter.innerHTML = contenuHTML;
+}
+
 
     function supprimerProduit(index) {
         let panier = JSON.parse(localStorage.getItem('panier')) || [];

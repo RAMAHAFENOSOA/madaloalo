@@ -1,5 +1,31 @@
 <style>
 /* Styling du panier */
+.remove-button {
+  background: none;
+  border: none;
+}
+
+.item-right {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.item-image {
+    max-width: 65px;
+    height: auto;
+}
+
+.cart-item {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -95,24 +121,30 @@ const closeButtonBottom = document.getElementById('closeButtonBottom'); // New c
 
 // Gestionnaire de clic sur le bouton de bascule du panier
 cartButton.addEventListener('click', () => {
+  
   if (cartDrawer.style.right === '' || cartDrawer.style.right === '-300px') {
     // Ouvrir le panier
     let panier = JSON.parse(localStorage.getItem('panier')) || [];
-
+    localStorage.setItem('panier', JSON.stringify(panier));
+    afficherContenuPanier(panier);
     function afficherContenuPanier(panier) {
-        var cartAjouter = document.getElementById('cartAjouter');
-        if (!cartAjouter) {
-            console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
-            return;
-        }
-        var contenuHTML = '<ul style="list-style: none;">';
-        for (var i = 0; i < panier.length; i++) {
-          contenuHTML += '<li class="dropdown"><a>Produit ID: ' + panier[i].id + ', Quantité: ' + panier[i].quantite +
-                         '<button onclick="supprimerProduit(' + i + ')" style="border:none;background:none;"><i class="bi bi-trash"></i></button></a></li>';
-        }
-        contenuHTML += '</ul>';
-        cartAjouter.innerHTML = contenuHTML;
+    var cartAjouter = document.getElementById('cartAjouter');
+    if (!cartAjouter) {
+        console.error("L'élément avec l'ID 'cartAjouter' n'a pas été trouvé.");
+        return;
     }
+
+    var contenuHTML = '<ul class="cart-list">';
+    for (var i = 0; i < panier.length; i++) {
+        var imageURL = document.getElementById('article-image--' + panier[i].id).getAttribute('src'); // Get image URL for the specific product ID
+        contenuHTML += '<li class="cart-item"><div class="item-left"><img class="item-image" src="' + imageURL + '" alt="Product Image"></div>' +
+                       '<div class="item-right"><div class="item-info">Produit: ' + document.getElementById('article-image--' + panier[i].id).getAttribute('nom-produit') + '</div>' +
+                       '<div class="item-info">Quantité: ' + panier[i].quantite + '</div>' +
+                       '<button onclick="supprimerProduit(' + i + ')" class="remove-button"><i class="bi bi-trash"></i></button></div></li>';
+    }
+    contenuHTML += '</ul>';
+    cartAjouter.innerHTML = contenuHTML;
+}
 
     function supprimerProduit(index) {
     let panier = JSON.parse(localStorage.getItem('panier')) || [];
@@ -123,8 +155,6 @@ cartButton.addEventListener('click', () => {
         }
     }
    
-    localStorage.setItem('panier', JSON.stringify(panier));
-    afficherContenuPanier(panier);
     cartDrawer.style.right = '0';
     overlay.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Désactiver le défilement

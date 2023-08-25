@@ -299,7 +299,7 @@ $hotels = mysqli_fetch_all($resultHotel, MYSQLI_ASSOC);
               <button type="button" class="btn btn-info" onclick="openModal()">Réserver</button>
 
             <!-- Overlay -->
-            <div id="overlay" class="overlay">
+            <div id="overlay" class="overlay reservation-form">
             <!-- Modal -->
             <div class="modal-container">
                 <!-- Modal content -->
@@ -384,13 +384,13 @@ $hotels = mysqli_fetch_all($resultHotel, MYSQLI_ASSOC);
 
             <script>
             function openModal() {
-                const overlay = document.getElementById('overlay');
+                const overlay = document.getElementsByClassName('reservation-form')[0];
                 overlay.style.display = 'flex';
                 document.body.style.overflow = 'hidden'; // Disable scrolling
             }
 
             function closeModal() {
-                const overlay = document.getElementById('overlay');
+              const overlay = document.getElementsByClassName('reservation-form')[0];
                 overlay.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Re-enable scrolling
             }

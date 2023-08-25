@@ -58,8 +58,8 @@ $regions = mysqli_fetch_all($result2, MYSQLI_ASSOC);
           <?php
               }
           ?>
-          <li><a id="search-button"><i class="bi bi-search tsleee"></i></a></li>
-          <li><a id="cartButton" ><i  class="bi bi-cart3 tsleee"></i></a></li>
+          <li><a id="search-button"><i class="bi bi-search" style="color:#41cf2e;font-size:17px;"></i></a></li>
+          <li><a id="cartButton" ><i  class="bi bi-cart3" style="color:#41cf2e;font-size:17px;"></i></a></li>
           <?php
                 if(isset($_SESSION['nom'])){
           ?>
