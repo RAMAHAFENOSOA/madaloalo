@@ -59,7 +59,6 @@ include "header.php"
                  
                       <h2 class="animate__animated animate__fadeInDown" style=" color:#fff; text-align:center; position:relative; bottom:45%">Laissez-vous envoûter par la diversité de Madagascar. </h2>
                       <p class="animate__animated animate__fadeInUp" style=" color:#fff; text-align:center; position:relative; bottom:45%">Depuis ses magnifiques plages jusqu'à ses sommets montagneux en passant par ses villages pittoresques chargés d'authenticité.</p>
-                      <img src="./images/avion-en-papier (1).png" alt="logo_bagage" style="width: 20%;height:20%;  position:relative; bottom:45%">
                       
                 
                 </div>
